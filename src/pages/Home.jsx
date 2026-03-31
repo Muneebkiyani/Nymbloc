@@ -29,7 +29,8 @@ const YouTubeVisionHandler = () => {
                     'controls': 0,
                     'modestbranding': 1,
                     'rel': 0,
-                    'iv_load_policy': 3
+                    'iv_load_policy': 3,
+                    'origin': location.origin || window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : ''),
                 },
                 events: {
                     'onReady': onPlayerReady

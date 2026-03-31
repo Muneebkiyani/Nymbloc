@@ -18,13 +18,13 @@ const Header = () => {
     return (
         <header className={isScrolled ? 'header-scrolled' : ''}>
             <div className="container nav-container">
-                <Link to="/" className="logo" onClick={closeMenu}>
-                    <img src="/assets/logo-header.png" alt="NYMBLOC Logo" style={{ height: '60px', width: 'auto', maxWidth: '250px', objectFit: 'contain' }} />
-                </Link>
-
                 <button className="mobile-menu-btn" aria-label="Toggle Menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     {isMenuOpen ? '✕' : '☰'}
                 </button>
+
+                <Link to="/" className="logo" onClick={closeMenu}>
+                    <img src="/assets/logo-header.png" alt="NYMBLOC Logo" style={{ height: '60px', width: 'auto', maxWidth: '250px', objectFit: 'contain' }} />
+                </Link>
 
                 <nav>
                     <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
