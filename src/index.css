@@ -639,6 +639,9 @@ footer { background-color: #01030d; color: var(--text-light); padding: 80px 0 30
         flex-direction: column !important;
         gap: 15px !important;
         width: 100% !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
     }
     .about-image img, .innovation-image img, .service-image img, .expertise-image img, .responsive-img { 
         width: 100% !important;
@@ -649,16 +652,7 @@ footer { background-color: #01030d; color: var(--text-light); padding: 80px 0 30
         margin-bottom: 5px !important;
     }
     .section-title { font-size: 2rem !important; }
-    .section-subtitle { font-size: 0.85rem !important; letter-spacing: 3px !important; }
-    .contact-wrapper {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 15px !important;
-        width: 100% !important;
-        padding: 0 !important;
-        background: transparent !important;
-        border: none !important;
-    }
+    .section-subtitle { font-size: 0.9rem !important; letter-spacing: 3px !important; }
     .contact-info-card, .contact-form { 
         padding: 20px !important;
         border-radius: 12px;
@@ -689,7 +683,7 @@ footer { background-color: #01030d; color: var(--text-light); padding: 80px 0 30
     
     .hero-text p, .expertise-text p { margin-left: auto; margin-right: auto; }
     .hero-buttons { justify-content: center; }
-    .service-row:nth-child(even-step), .step-item:nth-child(even-step) { direction: ltr; }
+    .service-row:nth-child(even), .step-item:nth-child(even) { direction: ltr; }
     .hero-text h1 { font-size: 3rem; }
     .section-title { font-size: 2.2rem; }
     .stat-card { padding: 15px; }
@@ -736,8 +730,6 @@ footer { background-color: #01030d; color: var(--text-light); padding: 80px 0 30
         font-size: 1rem !important;
         margin-bottom: 8px !important;
     }
-    .section-title { font-size: 2rem !important; }
-    .section-subtitle { font-size: 0.9rem !important; letter-spacing: 3px !important; }
     .info-item { gap: 12px !important; margin-bottom: 15px !important; }
 }
 
