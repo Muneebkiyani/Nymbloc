@@ -17,7 +17,7 @@ const Services = () => {
                         {/* SaaS */}
                         <div className="service-row">
                             <div className="service-image" data-aos="fade-right">
-                                <img src="/assets/expertise.jpg" alt="SaaS Development" />
+                                <img src="/assets/expertise.jpg" alt="SaaS Development" className="responsive-img" />
                             </div>
                             <div className="service-text" data-aos="fade-left">
                                 <div className="service-icon-large">
@@ -33,7 +33,7 @@ const Services = () => {
                         {/* React */}
                         <div className="service-row">
                             <div className="service-image" data-aos="fade-left">
-                                <img src="/assets/react.png" alt="React Development" />
+                                <img src="/assets/react.png" alt="React Development" className="responsive-img" />
                             </div>
                             <div className="service-text" data-aos="fade-right">
                                 <div className="service-icon-large">
@@ -49,7 +49,7 @@ const Services = () => {
                         {/* Laravel */}
                         <div className="service-row">
                             <div className="service-image" data-aos="fade-right">
-                                <img src="/assets/laravel.png" alt="Laravel Development" />
+                                <img src="/assets/laravel.png" alt="Laravel Development" className="responsive-img" />
                             </div>
                             <div className="service-text" data-aos="fade-left">
                                 <div className="service-icon-large">
@@ -65,7 +65,7 @@ const Services = () => {
                         {/* WordPress */}
                         <div className="service-row">
                             <div className="service-image" data-aos="fade-left">
-                                <img src="/assets/wordpress.png" alt="WordPress Development" />
+                                <img src="/assets/wordpress.png" alt="WordPress Development" className="responsive-img" />
                             </div>
                             <div className="service-text" data-aos="fade-right">
                                 <div className="service-icon-large">

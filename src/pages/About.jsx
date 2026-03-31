@@ -15,7 +15,7 @@ const About = () => {
                 <div className="container">
                     <div className="about-grid">
                         <div className="about-image" data-aos="fade-right">
-                            <img src="/assets/expertise.jpg" alt="NYMBLOC Team" />
+                            <img src="/assets/expertise.jpg" alt="NYMBLOC Team" className="responsive-img" />
                         </div>
                         <div className="about-text" data-aos="fade-left">
                             <h2 className="section-title">Our Story</h2>

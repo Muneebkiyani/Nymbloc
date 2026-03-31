@@ -153,7 +153,7 @@ const Home = () => {
                         <h2 className="section-title">The Future of Software Development</h2>
                         <p style={{ maxWidth: '800px', margin: '0 auto 40px', color: 'var(--text-light)' }}>Our multi-disciplinary team combines architectural precision with rapid execution to transform ambitious visions into market-leading digital realities.</p>
                     </div>
-                    <div className="portfolio-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
+                    <div className="portfolio-grid">
                         <div className="benefit-card" data-aos="zoom-in">
                             <div className="benefit-icon">🧬</div>
                             <h3>Quantum Scalability</h3>
@@ -257,9 +257,9 @@ const Home = () => {
             <section className="expertise-section section-padding" style={{ position: 'relative', overflow: 'hidden' }}>
                 <SectionVideo opacity={0.15} />
                 <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-                    <div className="expertise-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
+                    <div className="expertise-grid">
                         <div className="expertise-image" data-aos="fade-right">
-                            <img src="/assets/innovation.jpg" alt="Our Expertise" style={{ width: '100%', borderRadius: '20px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
+                            <img src="/assets/innovation.jpg" alt="Our Expertise" className="responsive-img" />
                         </div>
                         <div className="expertise-text" data-aos="fade-left">
                             <span className="section-subtitle">How we help</span>
@@ -318,7 +318,8 @@ const Home = () => {
                     </div>
 
                     {showForm && (
-                        <div className="contact-form" style={{ maxWidth: '600px', margin: '40px auto 0', padding: '40px' }} data-aos="fade-up">
+                        <div className="contact-form-wrapper" data-aos="fade-up">
+                            <div className="contact-form">
                             <form onSubmit={handleAddTestimonial}>
                                 <h3 style={{ color: 'white', marginBottom: '25px', textAlign: 'center' }}>Submit Your Testimonial</h3>
                                 <div className="form-group">
@@ -349,6 +350,7 @@ const Home = () => {
                                 </div>
                                 <button type="submit" className="submit-btn reveal-text">Publish Success Story →</button>
                             </form>
+                        </div>
                         </div>
                     )}
                 </div>

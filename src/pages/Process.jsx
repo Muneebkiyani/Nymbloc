@@ -61,7 +61,7 @@ const Process = () => {
                                     </div>
                                 </div>
                                 <div className="step-image">
-                                    <img src={step.image} alt={step.title} />
+                                    <img src={step.image} alt={step.title} className="responsive-img" />
                                 </div>
                             </div>
                         ))}

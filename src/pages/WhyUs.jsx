@@ -15,7 +15,7 @@ const WhyUs = () => {
                 <div className="container">
                     <div className="innovation-section">
                         <div className="innovation-image" data-aos="fade-right">
-                            <img src="/assets/innovation.jpg" alt="Innovation at NYMBLOC" />
+                            <img src="/assets/innovation.jpg" alt="Innovation at NYMBLOC" className="responsive-img" />
                         </div>
                         <div className="innovation-text" data-aos="fade-left">
                             <span className="section-subtitle">Innovation Lab</span>
@@ -71,7 +71,7 @@ const WhyUs = () => {
                             <p style={{ color: '#cbd5e1' }}>Your data's safety is our top priority. Our facilities are monitored 24/7 by specialized technicians in controlled environments, guaranteeing the highest standards of digital hygiene and physical security.</p>
                         </div>
                         <div className="innovation-image" data-aos="fade-left">
-                            <img src="/assets/infrastructure.jpg" alt="Infrastructure at NYMBLOC" />
+                            <img src="/assets/infrastructure.jpg" alt="Infrastructure at NYMBLOC" className="responsive-img" />
                         </div>
                     </div>
                 </div>
