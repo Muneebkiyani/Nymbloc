@@ -6,28 +6,28 @@ const Process = () => {
             num: "01",
             title: "Discovery & Consultation",
             desc: "We begin by diving deep into your business goals, target audience, and project requirements. Through workshops and interviews, we define the scope and set clear objectives for success.",
-            image: "/assets/a_Format__.jpg_or_.png.png",
+            image: "/assets/process-discovery.png",
             points: ["Goal Alignment", "User Personas", "Tech Requirements"]
         },
         {
             num: "02",
             title: "Strategy & Planning",
             desc: "Once we have a clear understanding, we move into the strategic phase. We create sitemaps, wireframes, and a technical roadmap that outlines the architecture and development timeline.",
-            image: "/assets/a_i_mean_such_images.png",
+            image: "/assets/process-strategy.png",
             points: ["Wireframing", "UX Design", "Sprint Planning"]
         },
         {
             num: "03",
             title: "Agile Development",
             desc: "Our expert developers bring the designs to life using modern technologies. We work in sprints, providing regular updates and allowing for feedback at every stage of the build.",
-            image: "/assets/b_Format__.jpg_or_.png.png",
+            image: "/assets/process-development.png",
             points: ["Sprints & Demos", "QA Testing", "Continuous Feedback"]
         },
         {
             num: "04",
             title: "Launch & Growth",
             desc: "After thorough testing, we deploy your solution to production. But our job doesn't end there—we provide ongoing support and optimizations to ensure long-term growth.",
-            image: "/assets/b_i_mean_such_images.png",
+            image: "/assets/process-growth.png",
             points: ["Production Deployment", "Performance Tuning", "Ongoing Support"]
         }
     ];
