@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Colors</title>
+</head>
+<body>
+    <img id="logo" src="assets/logo-header.png" style="display:none;" />
+    <div id="output">Loading...</div>
+    <script>
+        window.onload = function() {
+            var img = document.getElementById('logo');
+            var canvas = document.createElement('canvas');
+            var ctx = canvas.getContext('2d');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0, img.width, img.height);
+            var data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+            var colorCounts = {};
+            for(var i = 0; i < data.length; i += 4) {
+                var r = data[i], g = data[i+1], b = data[i+2], a = data[i+3];
+                if(a > 50) {
+                    var r10 = Math.floor(r/20)*20;
+                    var g10 = Math.floor(g/20)*20;
+                    var b10 = Math.floor(b/20)*20;
+                    var key = r10 + ',' + g10 + ',' + b10;
+                    colorCounts[key] = (colorCounts[key] || 0) + 1;
+                }
+            }
+            var sorted = Object.keys(colorCounts).sort(function(a, b) { return colorCounts[b] - colorCounts[a]; });
+            var top = sorted.slice(0, 5);
+            document.getElementById('output').innerText = "Top Colors: " + top.join(" | ");
+        };
+    </script>
+</body>
+</html>

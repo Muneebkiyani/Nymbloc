@@ -1,0 +1,46 @@
+import React, { useState, useEffect } from 'react';
+import { NavLink, Link } from 'react-router-dom';
+
+const Header = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const closeMenu = () => setIsMenuOpen(false);
+
+    return (
+        <header className={isScrolled ? 'header-scrolled' : ''}>
+            <div className="container nav-container">
+                <Link to="/" className="logo" onClick={closeMenu}>
+                    <img src="/assets/logo-header.png" alt="NYMBLOC Logo" style={{ height: '60px', width: 'auto', maxWidth: '250px', objectFit: 'contain' }} />
+                </Link>
+
+                <button className="mobile-menu-btn" aria-label="Toggle Menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                    {isMenuOpen ? '✕' : '☰'}
+                </button>
+
+                <nav>
+                    <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+                        <li><NavLink to="/" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu} end>Home</NavLink></li>
+                        <li><NavLink to="/about" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>About</NavLink></li>
+                        <li><NavLink to="/services" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>Services</NavLink></li>
+                        <li><NavLink to="/portfolio" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>Portfolio</NavLink></li>
+                        <li><NavLink to="/process" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>Process</NavLink></li>
+                        <li><NavLink to="/why-us" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>Why Us</NavLink></li>
+                        <li><NavLink to="/faq" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>FAQ</NavLink></li>
+                        <li><Link to="/contact" className="btn btn-primary" style={{ padding: '8px 20px', color: 'white' }} onClick={closeMenu}>Contact</Link></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    );
+};
+
+export default Header;
