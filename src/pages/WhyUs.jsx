@@ -1,4 +1,5 @@
 import React from 'react';
+import Counter from '../components/Counter';
 
 const WhyUs = () => {
     return (
@@ -47,13 +48,15 @@ const WhyUs = () => {
 
                     <div className="stats-row" data-aos="fade-up">
                         {[
-                            { val: "50+", lab: "Projects Delivered" },
-                            { val: "98%", lab: "Client Satisfaction" },
-                            { val: "10+", lab: "Tech Experts" },
-                            { val: "5+", lab: "Years of Innovation" }
+                            { target: 50, suffix: "+", lab: "Projects Delivered" },
+                            { target: 98, suffix: "%", lab: "Client Satisfaction" },
+                            { target: 10, suffix: "+", lab: "Tech Experts" },
+                            { target: 5, suffix: "+", lab: "Years of Innovation" }
                         ].map((s, i) => (
                             <div className="stat-card" key={i}>
-                                <span className="stat-number">{s.val}</span>
+                                <span className="stat-number">
+                                    <Counter target={s.target} suffix={s.suffix} />
+                                </span>
                                 <span className="stat-label">{s.lab}</span>
                             </div>
                         ))}

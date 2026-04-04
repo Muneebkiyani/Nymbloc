@@ -45,11 +45,13 @@ const Contact = () => {
 
                         <form 
                             className="contact-form" 
-                            action="https://formspree.io/f/xeepglwy" 
+                            action="https://formsubmit.co/hello@nymbloc.com" 
                             method="POST"
                         >
-                            <input type="hidden" name="_to" value="muneebkiyni31@gmail.com" />
+                            {/* Form Configuration */}
                             <input type="hidden" name="_subject" value="New NYMBLOC Consultation Request" />
+                            <input type="hidden" name="_template" value="table" />
+                            <input type="hidden" name="_captcha" value="true" />
                             
                             <div className="form-group">
                                 <label style={{ color: 'white', opacity: 0.8, fontSize: '0.9rem', marginBottom: '8px', display: 'block' }}>Full Name</label>
@@ -77,7 +79,7 @@ const Contact = () => {
                             
                             <p style={{ marginTop: '20px', fontSize: '0.8rem', color: 'var(--text-light)', textAlign: 'center' }}>
                                 Form submissons are automatically routed to <br /> 
-                                <strong style={{ color: 'var(--accent-orange)' }}>muneebkiyni31@gmail.com</strong>
+                                <strong style={{ color: 'var(--accent-orange)' }}>hello@nymbloc.com</strong>
                             </p>
                         </form>
                     </div>

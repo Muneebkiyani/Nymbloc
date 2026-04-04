@@ -1,55 +1,74 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Counter from '../components/Counter';
 
 const YouTubeVisionHandler = () => {
     useEffect(() => {
-        // Load YouTube IFrame API if not already present
-        if (!window.YT) {
-            const tag = document.createElement('script');
-            tag.src = "https://www.youtube.com/iframe_api";
-            const firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        }
-
-        const onPlayerReady = (event) => {
-            event.target.playVideo();
-            event.target.setPlaybackRate(2); // Fast-forward effect
-        };
-
-        const createPlayer = () => {
-            new window.YT.Player('vision-player', {
-                height: '100%',
-                width: '100%',
-                videoId: 'zqwT2hr_Z5E',
-                playerVars: {
-                    'autoplay': 1,
-                    'mute': 1,
-                    'loop': 1,
-                    'playlist': 'zqwT2hr_Z5E',
-                    'controls': 0,
-                    'modestbranding': 1,
-                    'rel': 0,
-                    'iv_load_policy': 3,
-                    'origin': location.origin || window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : ''),
-                },
-                events: {
-                    'onReady': onPlayerReady
+        // Only load YouTube IFrame API when user reaches the section to improve initial page load
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                if (!window.YT) {
+                    const tag = document.createElement('script');
+                    tag.src = "https://www.youtube.com/iframe_api";
+                    const firstScriptTag = document.getElementsByTagName('script')[0];
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
                 }
-            });
-        };
 
-        if (window.YT && window.YT.Player) {
-            createPlayer();
-        } else {
-            window.onYouTubeIframeAPIReady = createPlayer;
-        }
+                const createPlayer = () => {
+                    new window.YT.Player('vision-player', {
+                        height: '100%',
+                        width: '100%',
+                        videoId: 'zqwT2hr_Z5E',
+                        playerVars: {
+                            'autoplay': 1,
+                            'mute': 1,
+                            'loop': 1,
+                            'playlist': 'zqwT2hr_Z5E',
+                            'controls': 0,
+                            'modestbranding': 1,
+                            'rel': 0,
+                            'iv_load_policy': 3,
+                            'origin': location.origin || window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : ''),
+                        },
+                        events: {
+                            'onReady': (event) => {
+                                event.target.playVideo();
+                                event.target.setPlaybackRate(2); // Fast-forward effect
+                            }
+                        }
+                    });
+                };
+
+                if (window.YT && window.YT.Player) {
+                    createPlayer();
+                } else {
+                    window.onYouTubeIframeAPIReady = createPlayer;
+                }
+                
+                observer.disconnect();
+            }
+        }, { threshold: 0.1 });
+
+        const playerElement = document.getElementById('vision-player');
+        if (playerElement) observer.observe(playerElement);
+
+        return () => observer.disconnect();
     }, []);
 
     return null;
 };
 
 const SectionVideo = ({ opacity = 0.2 }) => (
-    <video autoPlay loop muted playsInline className="section-video-bg" style={{ opacity }}>
+    <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
+        className="section-video-bg" 
+        poster="/assets/hero-poster.png"
+        preload="auto"
+        style={{ opacity }}
+    >
         <source src="/assets/hero-bg.mp4" type="video/mp4" />
     </video>
 );
@@ -145,9 +164,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Innovation Showcase (Section 3 - Video Background) */}
             <section id="innovation-showcase" className="section-padding" style={{ position: 'relative', overflow: 'hidden', backgroundColor: 'var(--bg-dark)' }}>
-                <SectionVideo opacity={0.2} />
                 <div className="container" style={{ position: 'relative', zIndex: 10 }}>
                     <div className="text-center">
                         <span className="section-subtitle">Forward Thinking</span>
@@ -197,9 +214,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Portfolio Preview (Section 5 - Video Background) */}
             <section id="portfolio-preview" className="section-padding" style={{ position: 'relative', overflow: 'hidden' }}>
-                <SectionVideo opacity={0.12} />
                 <div className="container" style={{ position: 'relative', zIndex: 10 }}>
                     <div className="text-center" style={{ marginBottom: '50px' }}>
                         <span className="section-subtitle">Our Work</span>
@@ -232,31 +247,29 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Stats Banner (Section 6 - Static) */}
+            {/* Stats Banner (Section 6 - Dynamic Counters) */}
             <div className="stats-banner" data-aos="zoom-in">
                 <div className="container stats-container">
                     <div className="stat-item">
-                        <h2>150+</h2>
-                        <p>Projects Launched</p>
+                        <h2><Counter target={50} suffix="+" /></h2>
+                        <p>Projects Delivered</p>
                     </div>
                     <div className="stat-item">
-                        <h2>12+</h2>
-                        <p>Years Experience</p>
+                        <h2><Counter target={98} suffix="%" /></h2>
+                        <p>Client Satisfaction</p>
                     </div>
                     <div className="stat-item">
-                        <h2>40+</h2>
+                        <h2><Counter target={10} suffix="+" /></h2>
                         <p>Tech Experts</p>
                     </div>
                     <div className="stat-item">
-                        <h2>99%</h2>
-                        <p>Client Retention</p>
+                        <h2><Counter target={5} suffix="+" /></h2>
+                        <p>Years of Innovation</p>
                     </div>
                 </div>
             </div>
 
-            {/* Expertise Section (Section 7 - Video Background) */}
             <section className="expertise-section section-padding" style={{ position: 'relative', overflow: 'hidden' }}>
-                <SectionVideo opacity={0.15} />
                 <div className="container" style={{ position: 'relative', zIndex: 10 }}>
                     <div className="expertise-grid">
                         <div className="expertise-image" data-aos="fade-right">
@@ -357,9 +370,7 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* CTA Section (Section 9 - Video Background) */}
             <section className="section-padding" data-aos="fade-up" style={{ position: 'relative', overflow: 'hidden', background: "linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/assets/bg-network-2.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', textAlign: 'center' }}>
-                <SectionVideo opacity={0.2} />
                 <div className="container" style={{ position: 'relative', zIndex: 10 }}>
                     <h2 className="section-title" style={{ color: 'white' }}>Ready to Build Something Amazing?</h2>
                     <p style={{ marginBottom: '30px', color: '#cbd5e1' }}>Contact us today and let's turn your vision into a digital reality.</p>
