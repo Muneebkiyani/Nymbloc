@@ -9,6 +9,12 @@ import Process from './pages/Process';
 import WhyUs from './pages/WhyUs';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
+import FrontendDevelopment from './pages/services/FrontendDevelopment';
+import BackendDevelopment from './pages/services/BackendDevelopment';
+import WordPressDevelopment from './pages/services/WordPressDevelopment';
+import WebsiteDevelopment from './pages/services/WebsiteDevelopment';
+import ApplicationDevelopment from './pages/services/ApplicationDevelopment';
+import Checkout from './pages/Checkout';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -33,6 +39,10 @@ function App() {
           <Route path="/why-us" element={<WhyUs />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/services/website" element={<WebsiteDevelopment />} />
+          <Route path="/services/application" element={<ApplicationDevelopment />} />
+          <Route path="/services/wordpress" element={<WordPressDevelopment />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Layout>
     </Router>

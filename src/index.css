@@ -916,3 +916,202 @@ footer {
         flex-direction: column !important;
     }
 }
+
+/* --- DROPDOWN MENU --- */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.arrow.up {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 260px;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 3px solid var(--accent-orange);
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    width: 100%;
+    border-bottom: none !important;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 25px;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--accent-orange);
+    padding-left: 30px;
+}
+
+@media (max-width: 992px) {
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.03);
+        border: none;
+        border-left: 2px solid var(--accent-orange);
+        border-radius: 0;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        transform: none;
+        padding-left: 20px;
+    }
+    
+    .dropdown-menu.show {
+        display: block;
+    }
+}
+
+/* --- PRICING SECTION --- */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.pricing-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    padding: 50px 40px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card.recommended {
+    border-color: var(--accent-orange);
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: var(--shadow-glow);
+}
+
+.recommended-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--accent-gradient);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.plan-name {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.plan-price {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--accent-orange);
+    margin-bottom: 30px;
+}
+
+.plan-features {
+    margin-bottom: 40px;
+    flex-grow: 1;
+}
+
+.plan-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.plan-features li svg {
+    color: var(--accent-orange);
+    flex-shrink: 0;
+}
+
+@media (max-width: 992px) {
+    .pricing-card.recommended {
+        transform: none;
+    }
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Colored Card Variants */
+.pricing-card.card-green { border-top: 5px solid #22c55e; }
+.pricing-card.card-blue { border-top: 5px solid #3b82f6; }
+.pricing-card.card-purple { border-top: 5px solid #a855f7; }
+
+.pricing-card.card-green .plan-price { color: #22c55e; }
+.pricing-card.card-blue .plan-price { color: #3b82f6; }
+.pricing-card.card-purple .plan-price { color: #a855f7; }
+
+.pricing-card.card-green .plan-features li svg { color: #22c55e; }
+.pricing-card.card-blue .plan-features li svg { color: #3b82f6; }
+.pricing-card.card-purple .plan-features li svg { color: #a855f7; }
+
+.pricing-card.card-green:hover { border-color: #22c55e; box-shadow: 0 0 30px rgba(34, 197, 94, 0.2); }
+.pricing-card.card-blue:hover { border-color: #3b82f6; box-shadow: 0 0 30px rgba(59, 130, 246, 0.2); }
+.pricing-card.card-purple:hover { border-color: #a855f7; box-shadow: 0 0 30px rgba(168, 85, 247, 0.2); }
+
+/* --- CHECKOUT SPECIFIC --- */
+.whatsapp-notice a:hover {
+    color: var(--accent-orange) !important;
+    text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+    .checkout-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .order-summary-container {
+        order: -1;
+    }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
     return (
@@ -14,51 +15,35 @@ const Services = () => {
             <section className="section-padding">
                 <div className="container">
                     <div className="services-detail">
-                        {/* SaaS */}
+                        {/* Website Development */}
                         <div className="service-row">
                             <div className="service-image" data-aos="fade-right">
-                                <img src="/assets/expertise.jpg" alt="SaaS Development" className="responsive-img" />
-                            </div>
-                            <div className="service-text" data-aos="fade-left">
-                                <div className="service-icon-large">
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
-                                </div>
-                                <h2 className="section-title">SaaS Development</h2>
-                                <p>We specialize in building multi-tenant Software as a Service applications. Our solutions include secure user authentication, subscription management with Stripe or PayPal integration, and scalable cloud infrastructure on AWS or DigitalOcean.</p>
-                                <br />
-                                <p>Whether you're building a CRM, an ERP, or a specialized niche tool, we ensure your SaaS is built to handle growth from day one.</p>
-                            </div>
-                        </div>
-
-                        {/* React */}
-                        <div className="service-row">
-                            <div className="service-image" data-aos="fade-left">
-                                <img src="/assets/react.png" alt="React Development" className="responsive-img" />
-                            </div>
-                            <div className="service-text" data-aos="fade-right">
-                                <div className="service-icon-large">
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                                </div>
-                                <h2 className="section-title">React & Frontend</h2>
-                                <p>Our frontend team creates blazing-fast, reactive user interfaces using React, Next.js, and TypeScript. We focus on performance, accessibility (a11y), and providing a seamless user experience across all devices.</p>
-                                <br />
-                                <p>From complex dashboards to landing pages that convert, we bring your designs to life with clean, maintainable code.</p>
-                            </div>
-                        </div>
-
-                        {/* Laravel */}
-                        <div className="service-row">
-                            <div className="service-image" data-aos="fade-right">
-                                <img src="/assets/laravel.png" alt="Laravel Development" className="responsive-img" />
+                                <img src="/assets/wordpress.png" alt="Website Development" className="responsive-img" />
                             </div>
                             <div className="service-text" data-aos="fade-left">
                                 <div className="service-icon-large">
                                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                                 </div>
-                                <h2 className="section-title">Laravel Backend</h2>
-                                <p>We leverage the elegance and power of the Laravel PHP framework to build robust, secure backends. We handle API development, database architecture (PostgreSQL, MySQL), and complex business logic with ease.</p>
+                                <h2 className="section-title">Website Development</h2>
+                                <p>We create stunning, high-performance websites that serve as the digital cornerstone of your brand. From high-converting landing pages to complex e-commerce platforms, we build with speed, SEO, and conversion in mind.</p>
                                 <br />
-                                <p>Our Laravel solutions are built following best practices, ensuring your application is easy to maintain and scale as your user base grows.</p>
+                                <Link to="/services/website" className="btn btn-outline" style={{ borderRadius: '10px', fontSize: '0.9rem' }}>Learn More & Pricing</Link>
+                            </div>
+                        </div>
+
+                        {/* Application Development */}
+                        <div className="service-row">
+                            <div className="service-image" data-aos="fade-left">
+                                <img src="/assets/expertise.jpg" alt="Application Development" className="responsive-img" />
+                            </div>
+                            <div className="service-text" data-aos="fade-right">
+                                <div className="service-icon-large">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                                </div>
+                                <h2 className="section-title">Application Development</h2>
+                                <p>We build sophisticated software solutions and SaaS platforms designed for scale. Our development team tackles complex business logic, multi-tenant architectures, and enterprise-grade security to ensure your application is built to handle growth from day one.</p>
+                                <br />
+                                <Link to="/services/application" className="btn btn-outline" style={{ borderRadius: '10px', fontSize: '0.9rem' }}>Learn More & Pricing</Link>
                             </div>
                         </div>
 
@@ -75,6 +60,8 @@ const Services = () => {
                                 <p>More than just templates—we build custom WordPress themes and plugins tailored to your specific requirements. We optimize for speed (Core Web Vitals) and SEO, ensuring your site performs as well as it looks.</p>
                                 <br />
                                 <p>Whether it's a content-heavy news site or a custom WooCommerce store, we turn WordPress into a professional business platform.</p>
+                                <br />
+                                <Link to="/services/wordpress" className="btn btn-outline" style={{ borderRadius: '10px', fontSize: '0.9rem' }}>Learn More & Pricing</Link>
                             </div>
                         </div>
                     </div>
