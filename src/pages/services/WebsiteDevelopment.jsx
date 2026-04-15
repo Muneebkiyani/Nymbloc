@@ -114,7 +114,7 @@ const WebsiteDevelopment = () => {
                                         Tech: {plan.tech}
                                     </li>
                                 </ul>
-                                <Link to={`/checkout?service=Website&plan=${plan.name}`} className={`btn ${plan.recommended ? 'btn-primary' : 'btn-outline'}`} style={{ width: '100%', borderColor: plan.recommended ? 'transparent' : 'rgba(255,255,255,0.2)' }}>
+                                <Link to={`/checkout?service=Website&plan=${encodeURIComponent(plan.name)}`} className={`btn ${plan.recommended ? 'btn-primary' : 'btn-outline'}`} style={{ width: '100%', borderColor: plan.recommended ? 'transparent' : 'rgba(255,255,255,0.2)' }}>
                                     Select Plan
                                 </Link>
                             </div>

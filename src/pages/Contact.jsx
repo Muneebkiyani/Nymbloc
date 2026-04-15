@@ -67,6 +67,8 @@ const Contact = () => {
                                     <option value="" disabled>Select Service</option>
                                     <option value="website">Website Development</option>
                                     <option value="application">Application Development</option>
+                                    <option value="frontend">React &amp; Frontend</option>
+                                    <option value="backend">Laravel &amp; Backend</option>
                                     <option value="wordpress">Custom WordPress</option>
                                 </select>
                             </div>
@@ -77,7 +79,7 @@ const Contact = () => {
                             <button type="submit" className="submit-btn" style={{ fontWeight: 800 }}>Launch Project →</button>
                             
                             <p style={{ marginTop: '20px', fontSize: '0.8rem', color: 'var(--text-light)', textAlign: 'center' }}>
-                                Form submissons are automatically routed to <br /> 
+                                Form submissions are automatically routed to <br /> 
                                 <strong style={{ color: 'var(--accent-orange)' }}>hello@nymbloc.com</strong>
                             </p>
                         </form>

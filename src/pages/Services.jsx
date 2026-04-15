@@ -18,7 +18,7 @@ const Services = () => {
                         {/* Website Development */}
                         <div className="service-row">
                             <div className="service-image" data-aos="fade-right">
-                                <img src="/assets/wordpress.png" alt="Website Development" className="responsive-img" />
+                                <img src="/assets/hero.jpg" alt="Website Development" className="responsive-img" />
                             </div>
                             <div className="service-text" data-aos="fade-left">
                                 <div className="service-icon-large">
@@ -44,6 +44,38 @@ const Services = () => {
                                 <p>We build sophisticated software solutions and SaaS platforms designed for scale. Our development team tackles complex business logic, multi-tenant architectures, and enterprise-grade security to ensure your application is built to handle growth from day one.</p>
                                 <br />
                                 <Link to="/services/application" className="btn btn-outline" style={{ borderRadius: '10px', fontSize: '0.9rem' }}>Learn More & Pricing</Link>
+                            </div>
+                        </div>
+
+                        {/* React & Frontend */}
+                        <div className="service-row">
+                            <div className="service-image" data-aos="fade-right">
+                                <img src="/assets/react.png" alt="React and frontend development" className="responsive-img" />
+                            </div>
+                            <div className="service-text" data-aos="fade-left">
+                                <div className="service-icon-large">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                                </div>
+                                <h2 className="section-title">React &amp; Frontend</h2>
+                                <p>High-performance interfaces with React and Next.js—component-driven architecture, accessibility, and speed that convert visitors into customers.</p>
+                                <br />
+                                <Link to="/services/frontend" className="btn btn-outline" style={{ borderRadius: '10px', fontSize: '0.9rem' }}>Learn More &amp; Pricing</Link>
+                            </div>
+                        </div>
+
+                        {/* Laravel & Backend */}
+                        <div className="service-row">
+                            <div className="service-image" data-aos="fade-left">
+                                <img src="/assets/laravel.png" alt="Laravel and backend development" className="responsive-img" />
+                            </div>
+                            <div className="service-text" data-aos="fade-right">
+                                <div className="service-icon-large">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19h16M4 15l4-4 4 4 4-4 4 4M4 7h16"></path></svg>
+                                </div>
+                                <h2 className="section-title">Laravel &amp; Backend</h2>
+                                <p>Secure APIs, business logic, and scalable data layers—built with Laravel and solid architecture so your product can grow with confidence.</p>
+                                <br />
+                                <Link to="/services/backend" className="btn btn-outline" style={{ borderRadius: '10px', fontSize: '0.9rem' }}>Learn More &amp; Pricing</Link>
                             </div>
                         </div>
 

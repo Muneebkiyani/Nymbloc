@@ -99,7 +99,7 @@ const FrontendDevelopment = () => {
                                         </li>
                                     ))}
                                 </ul>
-                                <Link to={`/checkout?service=Frontend&plan=${plan.name}`} className={`btn ${plan.recommended ? 'btn-primary' : 'btn-outline'}`} style={{ width: '100%' }}>
+                                <Link to={`/checkout?service=Frontend&plan=${encodeURIComponent(plan.name)}`} className={`btn ${plan.recommended ? 'btn-primary' : 'btn-outline'}`} style={{ width: '100%' }}>
                                     Select Plan
                                 </Link>
                             </div>

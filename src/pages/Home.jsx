@@ -91,7 +91,13 @@ const Home = () => {
 
     const [testimonials, setTestimonials] = useState(() => {
         const saved = localStorage.getItem('nymbloc_testimonials');
-        return saved ? JSON.parse(saved) : defaultTestimonials;
+        if (!saved) return defaultTestimonials;
+        try {
+            const parsed = JSON.parse(saved);
+            return Array.isArray(parsed) ? parsed : defaultTestimonials;
+        } catch {
+            return defaultTestimonials;
+        }
     });
 
     const [newTestimonial, setNewTestimonial] = useState({ name: '', role: '', text: '' });

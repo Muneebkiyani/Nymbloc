@@ -41,6 +41,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/services/website" element={<WebsiteDevelopment />} />
           <Route path="/services/application" element={<ApplicationDevelopment />} />
+          <Route path="/services/frontend" element={<FrontendDevelopment />} />
+          <Route path="/services/backend" element={<BackendDevelopment />} />
           <Route path="/services/wordpress" element={<WordPressDevelopment />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>

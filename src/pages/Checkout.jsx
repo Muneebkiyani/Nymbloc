@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const Checkout = () => {
-    const location = useLocation();
-    const [service, setService] = useState('');
-    const [plan, setPlan] = useState('');
-
-    useEffect(() => {
-        const params = new URLSearchParams(location.search);
-        setService(params.get('service') || 'Selected Service');
-        setPlan(params.get('plan') || 'Selected Plan');
-    }, [location]);
+    const { search } = useLocation();
+    const { service, plan } = useMemo(() => {
+        const params = new URLSearchParams(search);
+        return {
+            service: params.get('service') || 'Selected Service',
+            plan: params.get('plan') || 'Selected Plan',
+        };
+    }, [search]);
 
     const getPrice = () => {
         const prices = {
@@ -23,6 +22,16 @@ const Checkout = () => {
                 'Basic App': '$249',
                 'Standard App': '$399',
                 'Advanced App': '$599'
+            },
+            'Frontend': {
+                'Landing Page': '$1,200',
+                'Web Application': '$3,500',
+                'Next.js Powerhouse': '$6,000'
+            },
+            'Backend': {
+                'API Foundation': '$1,500',
+                'Business Engine': '$4,000',
+                'Legacy Overhaul': '$7,500'
             },
             'WordPress': {
                 'Basic': '$199',

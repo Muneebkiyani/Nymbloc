@@ -56,6 +56,8 @@ const Header = () => {
                             <ul className={`dropdown-menu ${isServicesOpen ? 'show' : ''}`}>
                                 <li><Link to="/services/website" onClick={closeMenu}>Website Development</Link></li>
                                 <li><Link to="/services/application" onClick={closeMenu}>Application Development</Link></li>
+                                <li><Link to="/services/frontend" onClick={closeMenu}>React &amp; Frontend</Link></li>
+                                <li><Link to="/services/backend" onClick={closeMenu}>Laravel &amp; Backend</Link></li>
                                 <li><Link to="/services/wordpress" onClick={closeMenu}>Custom WordPress</Link></li>
                             </ul>
                         </li>

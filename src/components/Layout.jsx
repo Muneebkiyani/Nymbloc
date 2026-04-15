@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Layout = ({ children }) => {
+    const { pathname } = useLocation();
     const cursorRef = useRef(null);
     const progressRef = useRef(null);
 
@@ -20,7 +22,7 @@ const Layout = ({ children }) => {
         // Scroll Progress
         const handleScroll = () => {
             const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = (window.pageYOffset / totalHeight) * 100;
+            const progress = totalHeight <= 0 ? 0 : (window.pageYOffset / totalHeight) * 100;
             if (progressRef.current) {
                 progressRef.current.style.width = progress + '%';
             }
@@ -64,10 +66,9 @@ const Layout = ({ children }) => {
         };
     }, []);
 
-    // Refresh AOS on children change
     useEffect(() => {
         AOS.refresh();
-    }, [children]);
+    }, [pathname]);
 
     return (
         <div className="app-layout">
