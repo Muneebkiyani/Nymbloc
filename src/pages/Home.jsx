@@ -1,6 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Counter from '../components/Counter';
+
+const HeroScene3D = lazy(() => import('../components/hero/HeroScene3D'));
+
+gsap.registerPlugin(ScrollTrigger);
 
 const YouTubeVisionHandler = () => {
     useEffect(() => {
@@ -58,21 +64,6 @@ const YouTubeVisionHandler = () => {
     return null;
 };
 
-const SectionVideo = ({ opacity = 0.2 }) => (
-    <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline 
-        className="section-video-bg" 
-        poster="/assets/hero-poster.png"
-        preload="auto"
-        style={{ opacity }}
-    >
-        <source src="/assets/hero-bg.mp4" type="video/mp4" />
-    </video>
-);
-
 const Home = () => {
     const defaultTestimonials = [
         {
@@ -103,6 +94,46 @@ const Home = () => {
     const [newTestimonial, setNewTestimonial] = useState({ name: '', role: '', text: '' });
     const [showForm, setShowForm] = useState(false);
 
+    /** 'off' = static gradient only, 'light' = lighter 3D (mobile), 'full' = full scene */
+    const [heroSceneMode, setHeroSceneMode] = useState('full');
+    const heroSectionRef = useRef(null);
+    const scrollProgressRef = useRef(0);
+
+    useEffect(() => {
+        const mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const mqSmall = window.matchMedia('(max-width: 768px)');
+        const apply = () => {
+            if (mqReduce.matches) setHeroSceneMode('off');
+            else if (mqSmall.matches) setHeroSceneMode('light');
+            else setHeroSceneMode('full');
+        };
+        apply();
+        mqReduce.addEventListener('change', apply);
+        mqSmall.addEventListener('change', apply);
+        return () => {
+            mqReduce.removeEventListener('change', apply);
+            mqSmall.removeEventListener('change', apply);
+        };
+    }, []);
+
+    useEffect(() => {
+        const el = heroSectionRef.current;
+        if (!el || heroSceneMode === 'off') return undefined;
+        const st = ScrollTrigger.create({
+            trigger: el,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.6,
+            onUpdate: (self) => {
+                scrollProgressRef.current = self.progress;
+            },
+        });
+        requestAnimationFrame(() => ScrollTrigger.refresh());
+        return () => {
+            st.kill();
+        };
+    }, [heroSceneMode]);
+
     useEffect(() => {
         localStorage.setItem('nymbloc_testimonials', JSON.stringify(testimonials));
     }, [testimonials]);
@@ -124,10 +155,19 @@ const Home = () => {
 
     return (
         <>
-            {/* Hero Section (Section 1 - Video) */}
-            <section id="home">
-                <SectionVideo opacity={0.35} />
-                <div className="container hero-content">
+            {/* Hero — immersive WebGL blocks + scroll-linked motion */}
+            <section id="home" ref={heroSectionRef} className="hero-with-3d">
+                {heroSceneMode === 'off' && <div className="hero-3d-fallback" aria-hidden />}
+                {(heroSceneMode === 'light' || heroSceneMode === 'full') && (
+                    <Suspense fallback={<div className="hero-3d-fallback" aria-hidden />}>
+                        <HeroScene3D
+                            scrollProgressRef={scrollProgressRef}
+                            reduced={heroSceneMode === 'light'}
+                        />
+                    </Suspense>
+                )}
+                <div className="hero-3d-overlay" aria-hidden />
+                <div className="container hero-content hero-content-3d">
                     <div className="hero-text" data-aos="fade-right">
                         <span className="section-subtitle">NYMBLOC Digital Agency</span>
                         <h1 className="reveal-text">Engineering the <br /><span>Digital Future</span></h1>
@@ -136,9 +176,6 @@ const Home = () => {
                             <Link to="/services" className="btn btn-primary">Our Solutions</Link>
                             <Link to="/contact" className="btn btn-outline">Consult an Expert</Link>
                         </div>
-                    </div>
-                    <div className="hero-visual" data-aos="fade-left">
-                        <img src="/assets/hero.jpg" alt="Coding at NYMBLOC" className="hero-image" />
                     </div>
                 </div>
             </section>

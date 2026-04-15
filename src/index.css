@@ -218,6 +218,57 @@ header.header-scrolled {
     color: white;
 }
 
+/* --- 3D hero (Home) --- */
+#home.hero-with-3d {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-top: calc(var(--header-height) + 100px);
+    padding-bottom: 120px;
+    background-attachment: scroll;
+}
+.hero-3d-canvas-wrap {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: min(100vh, 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+.hero-3d-canvas-wrap canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+.hero-3d-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        105deg,
+        rgba(2, 6, 23, 0.93) 0%,
+        rgba(2, 6, 23, 0.5) 45%,
+        rgba(15, 23, 42, 0.2) 100%
+    );
+}
+.hero-3d-fallback {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse 85% 65% at 72% 38%, rgba(56, 189, 248, 0.14), transparent 55%),
+        radial-gradient(ellipse 55% 45% at 18% 78%, rgba(245, 158, 11, 0.12), transparent 52%),
+        var(--bg-gradient-hero);
+}
+.hero-content-3d {
+    justify-content: flex-start;
+}
+.hero-content-3d .hero-text {
+    max-width: 640px;
+}
+
 .section-video-bg, .hero-video-bg {
     position: absolute;
     top: 0;
