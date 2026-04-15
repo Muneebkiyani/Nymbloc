@@ -269,6 +269,99 @@ header.header-scrolled {
     max-width: 640px;
 }
 
+/* --- Scroll-synced 3D accents (site-wide) --- */
+.section-has-3d {
+    position: relative;
+    overflow: hidden;
+}
+.scroll-3d-corner {
+    pointer-events: none;
+}
+.scroll-3d-corner-tr {
+    position: absolute;
+    top: 6%;
+    right: 3%;
+    width: min(300px, 44vw);
+    height: 260px;
+    z-index: 0;
+    opacity: 0.9;
+}
+.scroll-3d-corner-bl {
+    position: absolute;
+    bottom: 8%;
+    left: 2%;
+    width: min(280px, 42vw);
+    height: 240px;
+    z-index: 0;
+    opacity: 0.88;
+}
+.scroll-3d-wrap {
+    position: relative;
+}
+.scroll-3d-fallback,
+.scroll-3d-fallback-inner {
+    background: radial-gradient(ellipse 70% 60% at 60% 40%, rgba(56, 189, 248, 0.12), transparent 60%),
+        radial-gradient(ellipse 50% 45% at 25% 75%, rgba(245, 158, 11, 0.1), transparent 55%);
+    border-radius: 12px;
+}
+.stats-banner-with-3d {
+    position: relative;
+    overflow: hidden;
+}
+.stats-banner-3d {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.38;
+    pointer-events: none;
+    min-height: 120px;
+}
+.section-cta-3d .cta-3d-layer {
+    position: absolute;
+    left: 50%;
+    top: 42%;
+    transform: translate(-50%, -50%);
+    width: min(420px, 88vw);
+    height: 260px;
+    z-index: 0;
+    opacity: 0.45;
+    pointer-events: none;
+}
+.page-header-with-3d {
+    position: relative;
+    overflow: hidden;
+}
+.page-header-3d-accent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(52%, 480px);
+    height: 100%;
+    min-height: 220px;
+    z-index: 0;
+    opacity: 0.85;
+    pointer-events: none;
+}
+.page-header-with-3d .container {
+    position: relative;
+    z-index: 2;
+}
+@media (max-width: 992px) {
+    .scroll-3d-corner-tr,
+    .scroll-3d-corner-bl {
+        display: none;
+    }
+    .page-header-3d-accent {
+        display: none;
+    }
+    .stats-banner-3d {
+        display: none;
+    }
+    .section-cta-3d .cta-3d-layer {
+        display: none;
+    }
+}
+
 .section-video-bg, .hero-video-bg {
     position: absolute;
     top: 0;

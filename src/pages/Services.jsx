@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PageHeader3D from '../components/three/PageHeader3D';
 
 const Services = () => {
     return (
         <>
-            <section className="page-header">
+            <section className="page-header page-header-with-3d">
+                <PageHeader3D variant="blocks" />
                 <div className="container">
                     <span className="section-subtitle">What We Do</span>
                     <h1 className="section-title reveal-text">Expert Services</h1>

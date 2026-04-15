@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PageHeader3D from '../../components/three/PageHeader3D';
 
 const FrontendDevelopment = () => {
     const plans = [
@@ -43,7 +44,8 @@ const FrontendDevelopment = () => {
 
     return (
         <div className="service-page">
-            <section className="page-header">
+            <section className="page-header page-header-with-3d">
+                <PageHeader3D variant="torus" />
                 <div className="container">
                     <span className="section-subtitle">Service Detail</span>
                     <h1 className="section-title reveal-text">React & Frontend</h1>

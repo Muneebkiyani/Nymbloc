@@ -1,9 +1,11 @@
 import React from 'react';
+import PageHeader3D from '../components/three/PageHeader3D';
 
 const About = () => {
     return (
         <>
-            <section className="page-header">
+            <section className="page-header page-header-with-3d">
+                <PageHeader3D variant="torus" />
                 <div className="container">
                     <span className="section-subtitle">Get to know us</span>
                     <h1 className="section-title reveal-text">About NYMBLOC</h1>

@@ -1,4 +1,5 @@
 import React from 'react';
+import PageHeader3D from '../components/three/PageHeader3D';
 
 const Portfolio = () => {
     const projects = [
@@ -42,7 +43,8 @@ const Portfolio = () => {
 
     return (
         <>
-            <section className="page-header">
+            <section className="page-header page-header-with-3d">
+                <PageHeader3D variant="rings" />
                 <div className="container">
                     <span className="section-subtitle">Our Work</span>
                     <h1 className="section-title reveal-text">Case Studies</h1>

@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from '../utils/gsapClient';
 import Counter from '../components/Counter';
+import ScrollSection3D from '../components/three/ScrollSection3D';
 
 const HeroScene3D = lazy(() => import('../components/hero/HeroScene3D'));
-
-gsap.registerPlugin(ScrollTrigger);
 
 const YouTubeVisionHandler = () => {
     useEffect(() => {
@@ -181,8 +179,11 @@ const Home = () => {
             </section>
 
             {/* Why Us Section (Section 2 - Static) */}
-            <section id="home-why" className="section-padding" data-aos="fade-up">
-                <div className="container">
+            <section id="home-why" className="section-padding section-has-3d" data-aos="fade-up">
+                <div className="scroll-3d-corner scroll-3d-corner-tr">
+                    <ScrollSection3D variant="torus" height={260} />
+                </div>
+                <div className="container" style={{ position: 'relative', zIndex: 2 }}>
                     <div className="text-center" style={{ marginBottom: '50px' }}>
                         <span className="section-subtitle">The NYMBLOC Edge</span>
                         <h2 className="section-title reveal-text">Why Industry Leaders Choose Us</h2>
@@ -207,7 +208,10 @@ const Home = () => {
                 </div>
             </section>
 
-            <section id="innovation-showcase" className="section-padding" style={{ position: 'relative', overflow: 'hidden', backgroundColor: 'var(--bg-dark)' }}>
+            <section id="innovation-showcase" className="section-padding section-has-3d" style={{ position: 'relative', overflow: 'hidden', backgroundColor: 'var(--bg-dark)' }}>
+                <div className="scroll-3d-corner scroll-3d-corner-bl">
+                    <ScrollSection3D variant="blocks" height={240} />
+                </div>
                 <div className="container" style={{ position: 'relative', zIndex: 10 }}>
                     <div className="text-center">
                         <span className="section-subtitle">Forward Thinking</span>
@@ -257,7 +261,10 @@ const Home = () => {
                 </div>
             </section>
 
-            <section id="portfolio-preview" className="section-padding" style={{ position: 'relative', overflow: 'hidden' }}>
+            <section id="portfolio-preview" className="section-padding section-has-3d" style={{ position: 'relative', overflow: 'hidden' }}>
+                <div className="scroll-3d-corner scroll-3d-corner-tr">
+                    <ScrollSection3D variant="orbs" height={260} />
+                </div>
                 <div className="container" style={{ position: 'relative', zIndex: 10 }}>
                     <div className="text-center" style={{ marginBottom: '50px' }}>
                         <span className="section-subtitle">Our Work</span>
@@ -291,8 +298,11 @@ const Home = () => {
             </section>
 
             {/* Stats Banner (Section 6 - Dynamic Counters) */}
-            <div className="stats-banner" data-aos="zoom-in">
-                <div className="container stats-container">
+            <div className="stats-banner stats-banner-with-3d" data-aos="zoom-in">
+                <div className="stats-banner-3d" aria-hidden>
+                    <ScrollSection3D variant="rings" height="100%" />
+                </div>
+                <div className="container stats-container" style={{ position: 'relative', zIndex: 2 }}>
                     <div className="stat-item">
                         <h2><Counter target={50} suffix="+" /></h2>
                         <p>Projects Delivered</p>
@@ -413,7 +423,10 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="section-padding" data-aos="fade-up" style={{ position: 'relative', overflow: 'hidden', background: "linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/assets/bg-network-2.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', textAlign: 'center' }}>
+            <section className="section-padding section-cta-3d" data-aos="fade-up" style={{ position: 'relative', overflow: 'hidden', background: "linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.88)), url('/assets/bg-network-2.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', color: 'white', textAlign: 'center' }}>
+                <div className="cta-3d-layer" aria-hidden>
+                    <ScrollSection3D variant="torus" height={280} />
+                </div>
                 <div className="container" style={{ position: 'relative', zIndex: 10 }}>
                     <h2 className="section-title" style={{ color: 'white' }}>Ready to Build Something Amazing?</h2>
                     <p style={{ marginBottom: '30px', color: '#cbd5e1' }}>Contact us today and let's turn your vision into a digital reality.</p>

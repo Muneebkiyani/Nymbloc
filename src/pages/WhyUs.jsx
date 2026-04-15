@@ -1,10 +1,12 @@
 import React from 'react';
 import Counter from '../components/Counter';
+import PageHeader3D from '../components/three/PageHeader3D';
 
 const WhyUs = () => {
     return (
         <>
-            <section className="page-header">
+            <section className="page-header page-header-with-3d">
+                <PageHeader3D variant="blocks" />
                 <div className="container">
                     <span className="section-subtitle" style={{ color: 'var(--accent-orange)' }}>Our Advantage</span>
                     <h1 className="section-title reveal-text">The NYMBLOC Difference</h1>

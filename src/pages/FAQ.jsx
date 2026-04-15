@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PageHeader3D from '../components/three/PageHeader3D';
 
 const FAQ = () => {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -15,7 +16,8 @@ const FAQ = () => {
 
     return (
         <>
-            <section className="page-header">
+            <section className="page-header page-header-with-3d">
+                <PageHeader3D variant="orbs" />
                 <div className="container">
                     <span className="section-subtitle">Got Questions?</span>
                     <h1 className="section-title reveal-text">Common Questions</h1>

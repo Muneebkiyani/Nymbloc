@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import { ScrollTrigger } from '../utils/gsapClient';
 import Header from './Header';
 import Footer from './Footer';
 import AOS from 'aos';
@@ -68,6 +69,7 @@ const Layout = ({ children }) => {
 
     useEffect(() => {
         AOS.refresh();
+        requestAnimationFrame(() => ScrollTrigger.refresh());
     }, [pathname]);
 
     return (

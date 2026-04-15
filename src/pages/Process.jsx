@@ -1,4 +1,5 @@
 import React from 'react';
+import PageHeader3D from '../components/three/PageHeader3D';
 
 const Process = () => {
     const steps = [
@@ -34,7 +35,8 @@ const Process = () => {
 
     return (
         <>
-            <section className="page-header">
+            <section className="page-header page-header-with-3d">
+                <PageHeader3D variant="torus" />
                 <div className="container">
                     <span className="section-subtitle">How We Work</span>
                     <h1 className="section-title reveal-text">Our Development Process</h1>
