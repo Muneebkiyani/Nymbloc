@@ -13,31 +13,21 @@ const Checkout = () => {
 
     const getPrice = () => {
         const prices = {
-            'Website': {
+            Website: {
                 'Starter Website': '$199',
                 'Business Website': '$299',
-                'Advanced Website': '$399'
+                'Advanced Website': '$399',
             },
-            'Application': {
+            Application: {
                 'Basic App': '$249',
                 'Standard App': '$399',
-                'Advanced App': '$599'
+                'Advanced App': '$599',
             },
-            'Frontend': {
-                'Landing Page': '$1,200',
-                'Web Application': '$3,500',
-                'Next.js Powerhouse': '$6,000'
+            WordPress: {
+                Basic: '$199',
+                Standard: '$249',
+                Premium: '$299',
             },
-            'Backend': {
-                'API Foundation': '$1,500',
-                'Business Engine': '$4,000',
-                'Legacy Overhaul': '$7,500'
-            },
-            'WordPress': {
-                'Basic': '$199',
-                'Standard': '$249',
-                'Premium': '$299'
-            }
         };
 
         return prices[service]?.[plan] || 'Custom / Contact';
@@ -45,17 +35,17 @@ const Checkout = () => {
 
     return (
         <div className="checkout-page">
-            <section className="page-header">
+            <section className="page-header robot-page-header" data-aos="fade-down">
                 <div className="container">
                     <span className="section-subtitle">Secure Checkout</span>
-                    <h1 className="section-title reveal-text">Finalize Your Plan</h1>
+                    <h1 className="section-title reveal-text robot-heading">Finalize Your Plan</h1>
                     <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--text-light)' }}>
                         You're one step away from starting your digital transformation with NYMBLOC.
                     </p>
                 </div>
             </section>
 
-            <section className="section-padding">
+            <section className="section-padding robot-page-section" data-aos="fade-up">
                 <div className="container">
                     <div className="checkout-grid" style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '40px' }}>
                         <div className="checkout-form-container">

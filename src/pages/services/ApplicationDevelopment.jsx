@@ -51,18 +51,18 @@ const ApplicationDevelopment = () => {
 
     return (
         <div className="service-page">
-            <section className="page-header page-header-with-3d">
+            <section className="page-header page-header-with-3d robot-page-header" data-aos="fade-down">
                 <PageHeader3D variant="orbs" />
                 <div className="container">
                     <span className="section-subtitle">Service Detail</span>
-                    <h1 className="section-title reveal-text">Application Development</h1>
+                    <h1 className="section-title reveal-text robot-heading">Application Development</h1>
                     <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--text-light)' }}>
                         Custom mobile and web applications built for performance and scale.
                     </p>
                 </div>
             </section>
 
-            <section className="section-padding">
+            <section className="section-padding robot-page-section" data-aos="fade-up">
                 <div className="container">
                     <div className="service-row">
                         <div className="service-image" data-aos="fade-right">

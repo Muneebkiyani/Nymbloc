@@ -16,16 +16,16 @@ const FAQ = () => {
 
     return (
         <>
-            <section className="page-header page-header-with-3d">
+            <section className="page-header page-header-with-3d robot-page-header" data-aos="fade-down">
                 <PageHeader3D variant="orbs" />
                 <div className="container">
                     <span className="section-subtitle">Got Questions?</span>
-                    <h1 className="section-title reveal-text">Common Questions</h1>
+                    <h1 className="section-title reveal-text robot-heading">Common Questions</h1>
                     <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--text-light)' }}>Everything you need to know about working with NYMBLOC and our development process.</p>
                 </div>
             </section>
 
-            <section className="section-padding">
+            <section className="section-padding robot-page-section" data-aos="fade-up">
                 <div className="container">
                     <div className="faq-list">
                         {faqs.map((faq, index) => (

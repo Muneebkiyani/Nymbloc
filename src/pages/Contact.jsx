@@ -4,16 +4,16 @@ import PageHeader3D from '../components/three/PageHeader3D';
 const Contact = () => {
     return (
         <>
-            <section className="page-header page-header-with-3d">
+            <section className="page-header page-header-with-3d robot-page-header" data-aos="fade-down">
                 <PageHeader3D variant="orbs" />
                 <div className="container">
                     <span className="section-subtitle">Get In Touch</span>
-                    <h1 className="section-title reveal-text">Contact Our Team</h1>
+                    <h1 className="section-title reveal-text robot-heading">Contact Our Team</h1>
                     <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--text-light)' }}>Have a project in mind? We'd love to hear from you. Fill out the form below and we'll get back to you within 24 hours.</p>
                 </div>
             </section>
 
-            <section className="section-padding">
+            <section className="section-padding robot-page-section" data-aos="fade-up">
                 <div className="container">
                     <div className="contact-wrapper">
                         <div className="contact-info-card">
@@ -69,9 +69,7 @@ const Contact = () => {
                                     <option value="" disabled>Select Service</option>
                                     <option value="website">Website Development</option>
                                     <option value="application">Application Development</option>
-                                    <option value="frontend">React &amp; Frontend</option>
-                                    <option value="backend">Laravel &amp; Backend</option>
-                                    <option value="wordpress">Custom WordPress</option>
+                                    <option value="wordpress">WordPress Sites</option>
                                 </select>
                             </div>
                             <div className="form-group">

@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className="robot-footer" data-aos="fade-up" data-aos-delay="80">
             <div className="container">
                 <div className="footer-grid">
                     <div className="footer-col">
                         <img src="/assets/logo-footer.png" alt="NYMBLOC" className="footer-logo" style={{ height: '80px', width: 'auto', maxWidth: '300px', objectFit: 'contain', marginBottom: '20px' }} />
-                        <p style={{ marginBottom: '25px' }}>Building the digital future, one block at a time. We specialize in high-performance web applications and custom enterprise solutions.</p>
+                        <p style={{ marginBottom: '25px' }}>Precision-built digital systems—websites, applications, and WordPress platforms engineered for scale.</p>
                         <p className="social-links" style={{ marginBottom: 0 }}>
                             <a href="mailto:hello@nymbloc.com?subject=NYMBLOC%20inquiry">Email us</a>
                             {' · '}
@@ -20,19 +20,16 @@ const Footer = () => {
                         <ul>
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/about">About Us</Link></li>
-                            <li><Link to="/portfolio">Portfolio</Link></li>
-                            <li><Link to="/process">Our Process</Link></li>
-                            <li><Link to="/why-us">Why Us</Link></li>
+                            <li><Link to="/faq">FAQ</Link></li>
+                            <li><Link to="/contact">Contact</Link></li>
                         </ul>
                     </div>
                     <div className="footer-col">
                         <h4>Services</h4>
                         <ul>
-                            <li><Link to="/services">SaaS Dev</Link></li>
-                            <li><Link to="/services">React Apps</Link></li>
-                            <li><Link to="/services">Laravel Backends</Link></li>
-                            <li><Link to="/services">WordPress</Link></li>
-                            <li><Link to="/services">UI/UX Design</Link></li>
+                            <li><Link to="/services/website">Website Development</Link></li>
+                            <li><Link to="/services/application">Application Development</Link></li>
+                            <li><Link to="/services/wordpress">WordPress Sites</Link></li>
                         </ul>
                     </div>
                     <div className="footer-col">

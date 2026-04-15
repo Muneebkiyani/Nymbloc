@@ -1,13 +1,23 @@
 import React, { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { ScrollTrigger } from '../utils/gsapClient';
+import { useRobotScrollFX } from '../hooks/useRobotScrollFX';
 import Header from './Header';
 import Footer from './Footer';
+import SplineBackground from './spline/SplineBackground';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Layout = ({ children }) => {
     const { pathname } = useLocation();
+    const reducedMotion = usePrefersReducedMotion();
+    useRobotScrollFX(true);
+
+    useEffect(() => {
+        document.body.classList.add('robot-site');
+        return () => document.body.classList.remove('robot-site');
+    }, []);
     const cursorRef = useRef(null);
     const progressRef = useRef(null);
 
@@ -36,7 +46,13 @@ const Layout = ({ children }) => {
                 cursorRef.current.style.top = e.clientY + 'px';
 
                 const target = e.target;
-                const isHoverable = target.closest('a') || target.closest('button') || target.closest('.benefit-card') || target.closest('.portfolio-item') || target.closest('.service-card');
+                const isHoverable =
+                    target.closest('a') ||
+                    target.closest('button') ||
+                    target.closest('.benefit-card') ||
+                    target.closest('.portfolio-item') ||
+                    target.closest('.service-card') ||
+                    target.closest('.robot-card');
                 
                 if (isHoverable) {
                     cursorRef.current.style.transform = 'translate(-50%, -50%) scale(2.5)';
@@ -48,7 +64,9 @@ const Layout = ({ children }) => {
             }
 
             // Cards Proximity Effect
-            const cards = document.querySelectorAll('.benefit-card, .service-card, .expertise-card, .culture-card, .stat-card, .benefit-item, .step-content');
+            const cards = document.querySelectorAll(
+                '.benefit-card, .service-card, .expertise-card, .culture-card, .stat-card, .benefit-item, .step-content, .robot-card, .robot-process-card, .pricing-card'
+            );
             cards.forEach(card => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
@@ -74,10 +92,13 @@ const Layout = ({ children }) => {
 
     return (
         <div className="app-layout">
+            {pathname !== '/' && (
+                <SplineBackground reducedMotion={reducedMotion} staticScene />
+            )}
             <div className="scroll-progress" ref={progressRef}></div>
             <div className="custom-cursor" ref={cursorRef}></div>
             <Header />
-            <main>{children}</main>
+            <main className="robot-main">{children}</main>
             <Footer />
         </div>
     );

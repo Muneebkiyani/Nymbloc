@@ -20,7 +20,7 @@ const Header = () => {
     };
 
     return (
-        <header className={isScrolled ? 'header-scrolled' : ''}>
+        <header className={`robot-header ${isScrolled ? 'header-scrolled' : ''}`}>
             <div className="container nav-container">
                 <button className="mobile-menu-btn" aria-label="Toggle Menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     {isMenuOpen ? '✕' : '☰'}
@@ -34,14 +34,14 @@ const Header = () => {
                     <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                         <li><NavLink to="/" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu} end>Home</NavLink></li>
                         <li><NavLink to="/about" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>About</NavLink></li>
-                        <li 
-                            className="dropdown" 
+                        <li
+                            className="dropdown"
                             onMouseEnter={() => window.innerWidth > 992 && setIsServicesOpen(true)}
                             onMouseLeave={() => window.innerWidth > 992 && setIsServicesOpen(false)}
                         >
-                            <NavLink 
-                                to="/services" 
-                                className={({ isActive }) => (isActive || isServicesOpen) ? 'active-link dropdown-toggle' : 'dropdown-toggle'} 
+                            <NavLink
+                                to="/services"
+                                className={({ isActive }) => (isActive || isServicesOpen) ? 'active-link dropdown-toggle' : 'dropdown-toggle'}
                                 onClick={(e) => {
                                     if (window.innerWidth <= 992) {
                                         e.preventDefault();
@@ -56,14 +56,9 @@ const Header = () => {
                             <ul className={`dropdown-menu ${isServicesOpen ? 'show' : ''}`}>
                                 <li><Link to="/services/website" onClick={closeMenu}>Website Development</Link></li>
                                 <li><Link to="/services/application" onClick={closeMenu}>Application Development</Link></li>
-                                <li><Link to="/services/frontend" onClick={closeMenu}>React &amp; Frontend</Link></li>
-                                <li><Link to="/services/backend" onClick={closeMenu}>Laravel &amp; Backend</Link></li>
-                                <li><Link to="/services/wordpress" onClick={closeMenu}>Custom WordPress</Link></li>
+                                <li><Link to="/services/wordpress" onClick={closeMenu}>WordPress Sites</Link></li>
                             </ul>
                         </li>
-                        <li><NavLink to="/portfolio" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>Portfolio</NavLink></li>
-                        <li><NavLink to="/process" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>Process</NavLink></li>
-                        <li><NavLink to="/why-us" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>Why Us</NavLink></li>
                         <li><NavLink to="/faq" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>FAQ</NavLink></li>
                         <li><Link to="/contact" className="btn btn-primary" style={{ padding: '8px 20px', color: 'white' }} onClick={closeMenu}>Contact</Link></li>
                     </ul>

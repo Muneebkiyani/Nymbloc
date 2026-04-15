@@ -4,16 +4,16 @@ import PageHeader3D from '../components/three/PageHeader3D';
 const About = () => {
     return (
         <>
-            <section className="page-header page-header-with-3d">
+            <section className="page-header page-header-with-3d robot-page-header" data-aos="fade-down">
                 <PageHeader3D variant="torus" />
                 <div className="container">
                     <span className="section-subtitle">Get to know us</span>
-                    <h1 className="section-title reveal-text">About NYMBLOC</h1>
+                    <h1 className="section-title reveal-text robot-heading">About NYMBLOC</h1>
                     <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--text-light)' }}>We are a team of passionate developers and designers dedicated to building the digital future.</p>
                 </div>
             </section>
 
-            <section className="section-padding">
+            <section className="section-padding robot-page-section" data-aos="fade-up">
                 <div className="container">
                     <div className="about-grid">
                         <div className="about-image" data-aos="fade-right">
@@ -45,7 +45,7 @@ const About = () => {
                 </div>
             </section>
 
-            <section className="culture-section" data-aos="fade-up">
+            <section className="culture-section section-padding robot-page-section" data-aos="fade-up">
                 <div className="container">
                     <div className="text-center" style={{ marginBottom: '50px' }}>
                         <span className="section-subtitle">Our Values</span>
