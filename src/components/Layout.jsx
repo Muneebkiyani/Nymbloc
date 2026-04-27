@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { ScrollTrigger } from '../utils/gsapClient';
 import Header from './Header';
 import Footer from './Footer';
+import Seo from './Seo';
 import AOS from 'aos';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
 
@@ -31,6 +32,7 @@ const Layout = ({ children }) => {
 
     return (
         <div className="app-layout site-shell">
+            <Seo />
             <Header />
             <main className="site-main">{children}</main>
             <Footer />
