@@ -4,6 +4,7 @@ import { ScrollTrigger } from '../utils/gsapClient';
 import Header from './Header';
 import Footer from './Footer';
 import Seo from './Seo';
+import CookieConsent from './CookieConsent';
 import AOS from 'aos';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
 
@@ -36,6 +37,7 @@ const Layout = ({ children }) => {
             <Header />
             <main className="site-main">{children}</main>
             <Footer />
+            <CookieConsent />
         </div>
     );
 };

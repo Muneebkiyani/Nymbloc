@@ -47,6 +47,10 @@ const SAMPLE_PROJECTS = [
     },
 ];
 
+/** Real photography hero (Unsplash — not generated). Same hotlink pattern as blog covers. */
+const HOME_HERO_IMAGE =
+    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=82&ixlib=rb-4.0.3';
+
 const HOME_FAQ = [
     {
         q: 'What do you actually build?',
@@ -70,13 +74,12 @@ const Home = () => {
                 id="home"
                 data-aos="fade-up"
                 data-aos-once="true"
+                style={{ '--home-hero-photo': `url("${HOME_HERO_IMAGE.replace(/"/g, '%22')}")` }}
             >
                 <div className="home-hero-bg" aria-hidden="true">
+                    <div className="home-hero-photo" />
                     <div className="home-hero-gradient" />
-                    <div className="home-hero-grid-pattern" />
-                    <div className="home-hero-blob home-hero-blob--1" />
-                    <div className="home-hero-blob home-hero-blob--2" />
-                    <div className="home-hero-blob home-hero-blob--3" />
+                    <div className="home-hero-grid-pattern home-hero-grid-pattern--subtle" />
                 </div>
                 <div className="container home-hero-inner-business">
                     <p className="home-eyebrow">Web design & development</p>
@@ -101,6 +104,12 @@ const Home = () => {
                         <li>WordPress & custom stacks</li>
                     </ul>
                 </div>
+                <p className="home-hero-credit">
+                    Hero: real stock photo (not AI-generated) via{' '}
+                    <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">
+                        Unsplash
+                    </a>
+                </p>
             </section>
 
             <section className="section-padding section-alt robot-page-section section--mobile-grid" data-aos="fade-up">

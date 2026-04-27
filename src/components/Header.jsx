@@ -14,6 +14,13 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isMenuOpen]);
+
     const closeMenu = () => {
         setIsMenuOpen(false);
         setIsServicesOpen(false);
@@ -21,6 +28,14 @@ const Header = () => {
 
     return (
         <header className={`robot-header ${isScrolled ? 'header-scrolled' : ''}`}>
+            {isMenuOpen ? (
+                <button
+                    type="button"
+                    className="nav-backdrop"
+                    aria-label="Close menu"
+                    onClick={closeMenu}
+                />
+            ) : null}
             <div className="container nav-container">
                 <button className="mobile-menu-btn" aria-label="Toggle Menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     {isMenuOpen ? '✕' : '☰'}
