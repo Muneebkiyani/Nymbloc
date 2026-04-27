@@ -35,22 +35,23 @@ const Checkout = () => {
 
     return (
         <div className="checkout-page">
-            <section className="page-header robot-page-header" data-aos="fade-down">
+            <section className="page-header robot-page-header page-header-simple" data-aos="fade-down">
                 <div className="container">
-                    <span className="section-subtitle">Secure Checkout</span>
-                    <h1 className="section-title reveal-text robot-heading">Finalize Your Plan</h1>
-                    <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--text-light)' }}>
-                        You're one step away from starting your digital transformation with NYMBLOC.
+                    <span className="section-subtitle">Next step</span>
+                    <h1 className="section-title reveal-text">Request this plan</h1>
+                    <p className="page-header-lead">
+                        Submit your details and we will follow up to confirm scope and timeline. This is a project
+                        inquiry—not instant payment processing.
                     </p>
                 </div>
             </section>
 
             <section className="section-padding robot-page-section" data-aos="fade-up">
                 <div className="container">
-                    <div className="checkout-grid" style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '40px' }}>
-                        <div className="checkout-form-container">
-                            <div className="glass-panel" style={{ padding: '40px' }}>
-                                <h2 style={{ marginBottom: '30px', color: 'white' }}>Your Information</h2>
+                    <div className="checkout-grid">
+                        <div className="checkout-form-container" data-aos="fade-up" data-aos-delay="0">
+                            <div className="glass-panel checkout-form-panel">
+                                <h2 className="checkout-form-title">Your information</h2>
                                 <form 
                                     className="contact-form" 
                                     style={{ padding: '0', background: 'transparent', border: 'none', boxShadow: 'none' }}
@@ -82,11 +83,12 @@ const Checkout = () => {
                                         <textarea name="message" placeholder="Tell us more about your project..."></textarea>
                                     </div>
                                     
-                                    <div className="whatsapp-notice" style={{ background: 'rgba(56, 189, 248, 0.1)', padding: '20px', borderRadius: '12px', marginBottom: '25px', border: '1px solid rgba(56, 189, 248, 0.2)' }}>
-                                        <p style={{ color: 'var(--accent-blue)', fontSize: '0.95rem' }}>
-                                            <strong>Note:</strong> After submission, our team will contact you within 24 hours to finalize details. For faster communication, you can reach us directly at:
+                                    <div className="checkout-notice">
+                                        <p>
+                                            <strong>Note:</strong> After submission, our team will contact you within
+                                            24 hours to finalize details. For faster communication, call us directly:
                                         </p>
-                                        <a href="tel:+17407626613" style={{ display: 'block', marginTop: '10px', fontSize: '1.2rem', fontWeight: '800', color: 'white' }}>
+                                        <a href="tel:+17407626613" className="checkout-phone">
                                             +1 740 762 6613
                                         </a>
                                     </div>
@@ -98,24 +100,22 @@ const Checkout = () => {
                             </div>
                         </div>
 
-                        <div className="order-summary-container">
-                            <div className="glass-panel" style={{ padding: '40px', position: 'sticky', top: '100px' }}>
-                                <h2 style={{ marginBottom: '30px', color: 'white' }}>Order Summary</h2>
-                                <div className="summary-item" style={{ marginBottom: '20px', paddingBottom: '20px', borderBottom: '1px solid var(--glass-border)' }}>
-                                    <span style={{ color: 'var(--text-light)', display: 'block', fontSize: '0.9rem' }}>Service</span>
-                                    <strong style={{ fontSize: '1.1rem', color: 'white' }}>{service} Development</strong>
+                        <div className="order-summary-container" data-aos="fade-up" data-aos-delay="80">
+                            <div className="glass-panel checkout-summary-panel">
+                                <h2 className="checkout-summary-title">Summary</h2>
+                                <div className="summary-item">
+                                    <span className="summary-label">Service</span>
+                                    <strong className="summary-value">{service} Development</strong>
                                 </div>
-                                <div className="summary-item" style={{ marginBottom: '20px', paddingBottom: '20px', borderBottom: '1px solid var(--glass-border)' }}>
-                                    <span style={{ color: 'var(--text-light)', display: 'block', fontSize: '0.9rem' }}>Selected Plan</span>
-                                    <strong style={{ fontSize: '1.1rem', color: 'var(--accent-orange)' }}>{plan}</strong>
+                                <div className="summary-item">
+                                    <span className="summary-label">Plan</span>
+                                    <strong className="summary-plan">{plan}</strong>
                                 </div>
-                                <div className="summary-total" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '30px' }}>
-                                    <span style={{ fontSize: '1.2rem', fontWeight: '700', color: 'white' }}>Total Estimate</span>
-                                    <span style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--accent-orange)' }}>
-                                        {getPrice()}
-                                    </span>
+                                <div className="summary-total">
+                                    <span className="summary-total-label">Estimate</span>
+                                    <span className="summary-total-price">{getPrice()}</span>
                                 </div>
-                                <p style={{ marginTop: '20px', fontSize: '0.85rem', color: 'var(--text-light)' }}>
+                                <p className="summary-disclaimer">
                                     * Final pricing might vary based on specific requirements. We will provide a formal invoice after the discovery call.
                                 </p>
                             </div>

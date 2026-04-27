@@ -1,24 +1,24 @@
 import React from 'react';
-import PageHeader3D from '../components/three/PageHeader3D';
 
 const Contact = () => {
     return (
         <>
-            <section className="page-header page-header-with-3d robot-page-header" data-aos="fade-down">
-                <PageHeader3D variant="orbs" />
+            <section className="page-header robot-page-header page-header-simple" data-aos="fade-down">
                 <div className="container">
-                    <span className="section-subtitle">Get In Touch</span>
-                    <h1 className="section-title reveal-text robot-heading">Contact Our Team</h1>
-                    <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--text-light)' }}>Have a project in mind? We'd love to hear from you. Fill out the form below and we'll get back to you within 24 hours.</p>
+                    <span className="section-subtitle">Get in touch</span>
+                    <h1 className="section-title reveal-text">Contact our team</h1>
+                    <p className="page-header-lead">
+                        Have a project in mind? Share a few details below. We typically reply within one business day.
+                    </p>
                 </div>
             </section>
 
             <section className="section-padding robot-page-section" data-aos="fade-up">
                 <div className="container">
                     <div className="contact-wrapper">
-                        <div className="contact-info-card">
-                            <h2>Contact Information</h2>
-                            <p style={{ marginBottom: '40px', color: '#cbd5e1' }}>Whether you're looking for a full-scale SaaS platform or a simple WordPress site, we're here to help.</p>
+                        <div className="contact-info-card" data-aos="fade-up" data-aos-delay="0">
+                            <h2>Contact information</h2>
+                            <p className="contact-info-lead">Whether you need a product build or a WordPress site, we are here to help.</p>
                             
                             <div className="info-item">
                                 <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -49,6 +49,8 @@ const Contact = () => {
                             className="contact-form" 
                             action="https://formsubmit.co/hello@nymbloc.com" 
                             method="POST"
+                            data-aos="fade-up"
+                            data-aos-delay="80"
                         >
                             {/* Form Configuration */}
                             <input type="hidden" name="_subject" value="New NYMBLOC Consultation Request" />
@@ -56,15 +58,15 @@ const Contact = () => {
                             <input type="hidden" name="_captcha" value="true" />
                             
                             <div className="form-group">
-                                <label style={{ color: 'white', opacity: 0.8, fontSize: '0.9rem', marginBottom: '8px', display: 'block' }}>Full Name</label>
+                                <label className="form-label">Full name</label>
                                 <input type="text" name="name" placeholder="John Doe" required />
                             </div>
                             <div className="form-group">
-                                <label style={{ color: 'white', opacity: 0.8, fontSize: '0.9rem', marginBottom: '8px', display: 'block' }}>Email Address</label>
+                                <label className="form-label">Email address</label>
                                 <input type="email" name="email" placeholder="john@example.com" required />
                             </div>
                             <div className="form-group">
-                                <label style={{ color: 'white', opacity: 0.8, fontSize: '0.9rem', marginBottom: '8px', display: 'block' }}>Interested Service</label>
+                                <label className="form-label">Interested service</label>
                                 <select name="service" required defaultValue="">
                                     <option value="" disabled>Select Service</option>
                                     <option value="website">Website Development</option>
@@ -73,14 +75,14 @@ const Contact = () => {
                                 </select>
                             </div>
                             <div className="form-group">
-                                <label style={{ color: 'white', opacity: 0.8, fontSize: '0.9rem', marginBottom: '8px', display: 'block' }}>Project Details</label>
+                                <label className="form-label">Project details</label>
                                 <textarea name="message" placeholder="Tell us about your project goals..." required></textarea>
                             </div>
-                            <button type="submit" className="submit-btn" style={{ fontWeight: 800 }}>Launch Project →</button>
+                            <button type="submit" className="submit-btn">Send message →</button>
                             
-                            <p style={{ marginTop: '20px', fontSize: '0.8rem', color: 'var(--text-light)', textAlign: 'center' }}>
-                                Form submissions are automatically routed to <br /> 
-                                <strong style={{ color: 'var(--accent-orange)' }}>hello@nymbloc.com</strong>
+                            <p className="contact-form-footnote">
+                                Submissions are sent to{' '}
+                                <strong className="contact-form-email">hello@nymbloc.com</strong>
                             </p>
                         </form>
                     </div>

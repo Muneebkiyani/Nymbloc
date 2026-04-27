@@ -1,19 +1,20 @@
 import React from 'react';
-import PageHeader3D from '../components/three/PageHeader3D';
 
 const About = () => {
     return (
         <>
-            <section className="page-header page-header-with-3d robot-page-header" data-aos="fade-down">
-                <PageHeader3D variant="torus" />
+            <section className="page-header robot-page-header page-header-simple" data-aos="fade-down">
                 <div className="container">
                     <span className="section-subtitle">Get to know us</span>
-                    <h1 className="section-title reveal-text robot-heading">About NYMBLOC</h1>
-                    <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--text-light)' }}>We are a team of passionate developers and designers dedicated to building the digital future.</p>
+                    <h1 className="section-title reveal-text">About NYMBLOC</h1>
+                    <p className="page-header-lead">
+                        We are designers and engineers who help businesses ship websites and software that are easy to
+                        understand, fast to load, and straightforward to maintain.
+                    </p>
                 </div>
             </section>
 
-            <section className="section-padding robot-page-section" data-aos="fade-up">
+            <section className="section-padding robot-page-section section--mobile-grid" data-aos="fade-up">
                 <div className="container">
                     <div className="about-grid">
                         <div className="about-image" data-aos="fade-right">
@@ -32,27 +33,30 @@ const About = () => {
                         </div>
                     </div>
 
-                    <div className="mission-vision" data-aos="zoom-in">
-                        <div className="mv-card">
+                    <div className="mission-vision" data-aos="fade-up">
+                        <div className="mv-card" data-aos="fade-up" data-aos-delay="0">
                             <h3>Our Mission</h3>
                             <p>To empower businesses by providing high-quality, scalable digital solutions that drive growth and foster innovation in an ever-evolving digital landscape.</p>
                         </div>
-                        <div className="mv-card">
+                        <div className="mv-card" data-aos="fade-up" data-aos-delay="80">
                             <h3>Our Vision</h3>
-                            <p>To be the global leader in digital transformation, recognized for our commitment to quality, creativity, and the success of our clients.</p>
+                            <p>
+                                To be a dependable partner for teams that care about quality—known for honest scoping,
+                                careful execution, and long-term support when you need it.
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="culture-section section-padding robot-page-section" data-aos="fade-up">
+            <section className="culture-section section-padding robot-page-section section--mobile-grid" data-aos="fade-up">
                 <div className="container">
                     <div className="text-center" style={{ marginBottom: '50px' }}>
                         <span className="section-subtitle">Our Values</span>
                         <h2 className="section-title reveal-text">What Drives NYMBLOC</h2>
                     </div>
                     <div className="culture-grid">
-                        <div className="culture-card" data-aos="zoom-in">
+                        <div className="culture-card" data-aos="fade-up" data-aos-delay="0">
                             <span className="culture-icon">🎯</span>
                             <h3>Precision</h3>
                             <p>We believe in getting it right the first time. Our rigorous testing and code review processes ensure that every release is stable and high-performing.</p>
@@ -62,7 +66,7 @@ const About = () => {
                             <h3>Transparency</h3>
                             <p>No black boxes here. We maintain open communication channels and provide full visibility into our development process via shared boards and weekly demos.</p>
                         </div>
-                        <div className="culture-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div className="culture-card" data-aos="fade-up" data-aos-delay="160">
                             <span className="culture-icon">🚀</span>
                             <h3>Agility</h3>
                             <p>The digital landscape changes fast. Our agile mindset allows us to pivot and adapt to your feedback, ensuring the end product meets your evolving needs.</p>

@@ -1,6 +1,6 @@
 {
   "name": "Nymbloc",
-  "short_name": "MySite",
+  "short_name": "NYMBLOC",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#1c2a6c",
   "background_color": "#ffffff",
   "display": "standalone"
 }

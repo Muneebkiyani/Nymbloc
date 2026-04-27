@@ -10,6 +10,10 @@ import WordPressDevelopment from './pages/services/WordPressDevelopment';
 import WebsiteDevelopment from './pages/services/WebsiteDevelopment';
 import ApplicationDevelopment from './pages/services/ApplicationDevelopment';
 import Checkout from './pages/Checkout';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -34,6 +38,10 @@ function App() {
           <Route path="/services/application" element={<ApplicationDevelopment />} />
           <Route path="/services/wordpress" element={<WordPressDevelopment />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
         </Routes>
       </Layout>
     </Router>

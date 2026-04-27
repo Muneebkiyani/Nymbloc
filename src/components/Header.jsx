@@ -59,8 +59,9 @@ const Header = () => {
                                 <li><Link to="/services/wordpress" onClick={closeMenu}>WordPress Sites</Link></li>
                             </ul>
                         </li>
+                        <li><NavLink to="/blog" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>Blog</NavLink></li>
                         <li><NavLink to="/faq" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>FAQ</NavLink></li>
-                        <li><Link to="/contact" className="btn btn-primary" style={{ padding: '8px 20px', color: 'white' }} onClick={closeMenu}>Contact</Link></li>
+                        <li><Link to="/contact" className="btn btn-primary header-cta" onClick={closeMenu}>Contact</Link></li>
                     </ul>
                 </nav>
             </div>

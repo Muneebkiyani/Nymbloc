@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PageHeader3D from '../../components/three/PageHeader3D';
 
 const WordPressDevelopment = () => {
     const plans = [
@@ -9,7 +8,6 @@ const WordPressDevelopment = () => {
             price: "$199",
             timeline: "1 week",
             tech: "WordPress + Custom Theme",
-            colorClass: "card-green",
             features: [
                 "Custom Theme Design",
                 "Mobile Responsive",
@@ -24,7 +22,6 @@ const WordPressDevelopment = () => {
             price: "$249",
             timeline: "2 weeks",
             tech: "WooCommerce / Elementor Pro",
-            colorClass: "card-blue",
             features: [
                 "Full WooCommerce Setup",
                 "Payment Gateway Integration",
@@ -39,7 +36,6 @@ const WordPressDevelopment = () => {
             price: "$299",
             timeline: "2-3 weeks",
             tech: "Advanced WP Engine",
-            colorClass: "card-purple",
             features: [
                 "Subscription Integration",
                 "Restricted Content Areas",
@@ -53,42 +49,41 @@ const WordPressDevelopment = () => {
 
     return (
         <div className="service-page">
-            <section className="page-header page-header-with-3d robot-page-header" data-aos="fade-down">
-                <PageHeader3D variant="blocks" />
+            <section
+                className="page-header robot-page-header service-page-hero"
+                style={{ '--service-hero-image': 'url(/assets/wordpress.png)' }}
+                data-aos="fade-down"
+            >
                 <div className="container">
-                    <span className="section-subtitle">Service Detail</span>
-                    <h1 className="section-title reveal-text robot-heading">WordPress Sites</h1>
-                    <p style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--text-light)' }}>
-                        Professional WordPress solutions with optimized performance and custom features.
+                    <span className="section-subtitle">Service</span>
+                    <h1 className="section-title reveal-text">WordPress sites</h1>
+                    <p className="page-header-lead">
+                        Custom themes, WooCommerce, and editorial workflows—built so your team can publish with
+                        confidence.
                     </p>
                 </div>
             </section>
 
             <section className="section-padding robot-page-section" data-aos="fade-up">
                 <div className="container">
-                    <div className="service-row">
-                        <div className="service-image" data-aos="fade-right">
-                            <img src="/assets/wordpress.png" alt="WordPress Development" className="responsive-img" />
-                        </div>
-                        <div className="service-text" data-aos="fade-left">
-                            <h2 className="section-title">Beyond the Basics</h2>
-                            <p>We transform WordPress into a powerful business tool. Our custom builds ensure your site is fast, secure, and easy to manage, giving you total control over your digital presence.</p>
-                            <br />
-                            <ul className="feature-list">
-                                <li>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                    Custom Theme & Plugin Dev
-                                </li>
-                                <li>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                    Expert WooCommerce Setup
-                                </li>
-                                <li>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                    Core Web Vitals Optimized
-                                </li>
-                            </ul>
-                        </div>
+                    <div className="service-intro-block">
+                        <h2 className="section-title">Beyond the Basics</h2>
+                        <p>We transform WordPress into a powerful business tool. Our custom builds ensure your site is fast, secure, and easy to manage, giving you total control over your digital presence.</p>
+                        <br />
+                        <ul className="feature-list">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Custom Theme & Plugin Dev
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Expert WooCommerce Setup
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Core Web Vitals Optimized
+                            </li>
+                        </ul>
                     </div>
 
                     <div className="pricing-header text-center" style={{ marginBottom: '60px' }}>
@@ -98,7 +93,7 @@ const WordPressDevelopment = () => {
 
                     <div className="pricing-grid">
                         {plans.map((plan, index) => (
-                            <div key={index} className={`pricing-card ${plan.recommended ? 'recommended' : ''} ${plan.colorClass}`} data-aos="fade-up" data-aos-delay={index * 100}>
+                            <div key={index} className={`pricing-card ${plan.recommended ? 'recommended' : ''}`} data-aos="fade-up" data-aos-delay={index * 100}>
                                 {plan.recommended && <div className="recommended-tag">Most Popular</div>}
                                 <h3 className="plan-name">{plan.name}</h3>
                                 <div className="plan-price">{plan.price}</div>
@@ -112,11 +107,11 @@ const WordPressDevelopment = () => {
                                             {feature}
                                         </li>
                                     ))}
-                                    <li style={{ marginTop: '10px', color: 'white', fontWeight: '600', fontSize: '0.85rem' }}>
+                                    <li className="plan-tech-line">
                                         Tech: {plan.tech}
                                     </li>
                                 </ul>
-                                <Link to={`/checkout?service=WordPress&plan=${encodeURIComponent(plan.name)}`} className={`btn ${plan.recommended ? 'btn-primary' : 'btn-outline'}`} style={{ width: '100%', borderColor: plan.recommended ? 'transparent' : 'rgba(255,255,255,0.2)' }}>
+                                <Link to={`/checkout?service=WordPress&plan=${encodeURIComponent(plan.name)}`} className={`btn ${plan.recommended ? 'btn-primary' : 'btn-outline'} plan-select-btn`}>
                                     Select Plan
                                 </Link>
                             </div>

@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="robot-footer" data-aos="fade-up" data-aos-delay="80">
+        <footer
+            className="robot-footer"
+            data-aos="fade-up"
+            data-aos-delay="80"
+            data-aos-once="true"
+        >
             <div className="container">
                 <div className="footer-grid">
                     <div className="footer-col">
@@ -20,8 +25,11 @@ const Footer = () => {
                         <ul>
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/about">About Us</Link></li>
+                            <li><Link to="/blog">Blog</Link></li>
                             <li><Link to="/faq">FAQ</Link></li>
                             <li><Link to="/contact">Contact</Link></li>
+                            <li><Link to="/privacy">Privacy Policy</Link></li>
+                            <li><Link to="/terms">Terms of Service</Link></li>
                         </ul>
                     </div>
                     <div className="footer-col">
@@ -50,9 +58,9 @@ const Footer = () => {
                 </div>
                 <div className="footer-bottom">
                     <p>&copy; 2026 NYMBLOC. All rights reserved.</p>
-                    <div style={{ display: 'flex', gap: '20px' }}>
-                        <a href="mailto:hello@nymbloc.com?subject=Privacy%20Policy%20inquiry">Privacy Policy</a>
-                        <a href="mailto:hello@nymbloc.com?subject=Terms%20of%20Service%20inquiry">Terms of Service</a>
+                    <div className="footer-bottom-links">
+                        <Link to="/privacy">Privacy</Link>
+                        <Link to="/terms">Terms</Link>
                     </div>
                 </div>
             </div>
