@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Counter from '../components/Counter';
 import FaqAccordion from '../components/FaqAccordion';
+import AdSense from '../components/AdSense';
 
 const PROCESS_STEPS = [
     {
@@ -110,6 +111,17 @@ const Home = () => {
                         Unsplash
                     </a>
                 </p>
+            </section>
+
+            <section
+                className="section-padding section-alt home-ad-section robot-page-section"
+                aria-label="Advertisement"
+                data-aos="fade-up"
+            >
+                <div className="container">
+                    <p className="home-ad-label">Advertisement</p>
+                    <AdSense adSlot="4077183281" className="home-ad-unit" />
+                </div>
             </section>
 
             <section className="section-padding section-alt robot-page-section section--mobile-grid" data-aos="fade-up">

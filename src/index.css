@@ -2690,6 +2690,24 @@ h2.robot-heading {
     background: var(--bg-white);
 }
 
+.home-ad-section {
+    padding-block: 2rem 2.5rem;
+}
+
+.home-ad-section .home-ad-label {
+    margin: 0 0 0.65rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-light);
+}
+
+.home-ad-unit {
+    min-height: 90px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
 /* Hero: real photography + scrim (Unsplash — see Home.jsx) */
 .home-hero-business {
     position: relative;
@@ -3456,6 +3474,21 @@ h2.robot-heading {
 
 .article-ul li {
     margin-bottom: 0.5rem;
+}
+
+.article-in-article-ad {
+    margin: 2rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.article-ad-label {
+    margin: 0 0 0.65rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-light);
 }
 
 .article-footer-cta {

@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import AdSense from '../components/AdSense';
 import { BLOG_COVER_FALLBACK_URL } from '../data/blogCovers.js';
 import { getPostBySlug } from '../data/blogPosts';
+
+/** In-article ad: after 2nd paragraph, or after 1st if only one (per AdSense guidance). */
+const IN_ARTICLE_AD_SLOT = '1893873079';
 
 function renderSection(section, index) {
     const delay = Math.min(index * 35, 210);
@@ -29,6 +33,32 @@ function renderSection(section, index) {
         );
     }
     return null;
+}
+
+function renderArticleBody(sections) {
+    const pIndices = sections
+        .map((s, i) => (s.type === 'p' ? i : -1))
+        .filter((i) => i >= 0);
+    const insertAfter =
+        pIndices.length >= 2 ? pIndices[1] : pIndices.length === 1 ? pIndices[0] : -1;
+
+    const nodes = [];
+    sections.forEach((section, index) => {
+        nodes.push(renderSection(section, index));
+        if (insertAfter >= 0 && index === insertAfter) {
+            nodes.push(
+                <div
+                    key="article-in-article-ad"
+                    className="article-in-article-ad"
+                    aria-label="Advertisement"
+                >
+                    <p className="article-ad-label">Advertisement</p>
+                    <AdSense adSlot={IN_ARTICLE_AD_SLOT} variant="in-article" />
+                </div>
+            );
+        }
+    });
+    return nodes;
 }
 
 const BlogPost = () => {
@@ -127,7 +157,7 @@ const BlogPost = () => {
                 <section className="section-padding robot-page-section article-body-section" data-aos="fade-up">
                     <div className="container article-container">
                         <div className="article-content" itemProp="articleBody">
-                            {post.sections.map((s, i) => renderSection(s, i))}
+                            {renderArticleBody(post.sections)}
                         </div>
                         <div className="article-footer-cta" data-aos="fade-up">
                             <h2 className="article-h2">Need help with your site?</h2>
