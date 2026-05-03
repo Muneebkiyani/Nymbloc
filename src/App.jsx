@@ -68,9 +68,11 @@ function App() {
                         <Route path="/privacy" element={<Privacy />} />
                         <Route path="/terms" element={<Terms />} />
                         <Route path="/demos" element={<DemosIndex />} />
+                        <Route path="/demo" element={<DemosIndex />} />
                     </Route>
                     <Route element={<DemoStandaloneLayout />}>
                         <Route path="/demos/:slug" element={<NicheDemoPage />} />
+                        <Route path="/demo/:slug" element={<NicheDemoPage />} />
                     </Route>
                 </Routes>
             </Suspense>

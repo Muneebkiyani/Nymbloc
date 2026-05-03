@@ -65,6 +65,14 @@ function normalizePath(pathname) {
     return p;
 }
 
+/** Single canonical URL for demos (/demos/...) when users visit /demo/... */
+function canonicalPathForSeo(pathname) {
+    const p = normalizePath(pathname);
+    if (p === '/demo') return '/demos';
+    if (p.startsWith('/demo/')) return `/demos${p.slice(5)}`;
+    return p;
+}
+
 export default function Seo() {
     const { pathname: rawPath } = useLocation();
     const pathname = normalizePath(rawPath);
@@ -97,8 +105,8 @@ export default function Seo() {
             robots = 'noindex, follow';
         }
     } else {
-        const demoMatch = /^\/demos\/([^/]+)$/.exec(pathname);
-        if (pathname === '/demos') {
+        const demoMatch = /^\/demos?\/([^/]+)$/.exec(pathname);
+        if (pathname === '/demos' || pathname === '/demo') {
             const m = ROUTE_META['/demos'];
             title = m.title;
             description = m.description;
@@ -127,7 +135,7 @@ export default function Seo() {
         robots = 'noindex, follow';
     }
 
-    const canonical = absoluteUrl(pathname);
+    const canonical = absoluteUrl(canonicalPathForSeo(pathname));
     const showWebSiteSchema = pathname === '/' || pathname === '';
 
     return (

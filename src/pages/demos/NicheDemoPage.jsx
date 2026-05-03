@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams, useLocation } from 'react-router-dom';
 import { getNicheDemoBySlug, whatsappHref } from '../../data/nicheDemos';
 import RestaurantFarmLayout from './RestaurantFarmLayout';
 import SalonStudioLayout from './SalonStudioLayout';
@@ -23,10 +23,12 @@ const OFFER_AOS = {
 
 function NicheDemoPage() {
     const { slug } = useParams();
+    const { pathname } = useLocation();
     const demo = getNicheDemoBySlug(slug);
 
     if (!demo) {
-        return <Navigate to="/demos" replace />;
+        const demosIndex = pathname.startsWith('/demo/') ? '/demo' : '/demos';
+        return <Navigate to={demosIndex} replace />;
     }
 
     const wa = whatsappHref(demo.label);

@@ -16,36 +16,36 @@ import DemoSideWhatsAppAd from './demos/DemoSideWhatsAppAd';
 import { getNicheDemoBySlug, whatsappHref, whatsappWebsiteOrderHref } from '../data/nicheDemos';
 
 /**
- * Full chrome for /demos/:slug — separate header, nav, and footer from the main marketing site.
+ * Full chrome for /demos/:slug and /demo/:slug — separate header, nav, and footer from the main marketing site.
  * Opens from the main site via links with target="_blank".
  */
 export default function DemoStandaloneLayout() {
     const { pathname } = useLocation();
     useSmoothScroll();
 
-    const slugMatch = /^\/demos\/([^/]+)$/.exec(pathname);
+    const slugMatch = /^\/demos?\/([^/]+)$/.exec(pathname);
     const popupSlug = slugMatch?.[1];
     const popupDemo = popupSlug ? getNicheDemoBySlug(popupSlug) : null;
     const popupWa = popupDemo ? whatsappHref(popupDemo.label) : '';
     const orderWa = popupDemo ? whatsappWebsiteOrderHref(popupDemo.label) : '';
 
-    const farmMatch = /^\/demos\/(restaurants)$/.exec(pathname);
+    const farmMatch = /^\/demos?\/(restaurants)$/.exec(pathname);
     const isFarmRestaurant = Boolean(farmMatch);
     const farmDemo = isFarmRestaurant ? getNicheDemoBySlug('restaurants') : null;
     const farmWa = farmDemo ? whatsappHref(farmDemo.label) : '';
 
-    const salonMatch = /^\/demos\/(salons)$/.exec(pathname);
+    const salonMatch = /^\/demos?\/(salons)$/.exec(pathname);
     const isSalonStudio = Boolean(salonMatch);
     const salonDemo = isSalonStudio ? getNicheDemoBySlug('salons') : null;
     const salonWa = salonDemo ? whatsappHref(salonDemo.label) : '';
 
-    const cleaningMatch = /^\/demos\/(cleaning)$/.exec(pathname);
+    const cleaningMatch = /^\/demos?\/(cleaning)$/.exec(pathname);
     const isCleaningCorporate = Boolean(cleaningMatch);
     const cleaningDemo = isCleaningCorporate ? getNicheDemoBySlug('cleaning') : null;
     const cleaningWa = cleaningDemo ? whatsappHref(cleaningDemo.label) : '';
     const cleaningCo = cleaningDemo?.corporate ?? {};
 
-    const bakeryMatch = /^\/demos\/(bakeries)$/.exec(pathname);
+    const bakeryMatch = /^\/demos?\/(bakeries)$/.exec(pathname);
     const isBakeryPeaceput = Boolean(bakeryMatch);
     const bakeryDemo = isBakeryPeaceput ? getNicheDemoBySlug('bakeries') : null;
     const bakeryWa = bakeryDemo ? whatsappHref(bakeryDemo.label) : '';

@@ -7,7 +7,11 @@ const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isServicesOpen, setIsServicesOpen] = useState(false);
     const [isDemosOpen, setIsDemosOpen] = useState(false);
-    const demosNavActive = pathname === '/demos';
+    const demosNavActive =
+        pathname === '/demos' ||
+        pathname === '/demo' ||
+        pathname.startsWith('/demos/') ||
+        pathname.startsWith('/demo/');
 
     useEffect(() => {
         const handleScroll = () => {
