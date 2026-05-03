@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
+import DemoStandaloneLayout from './components/DemoStandaloneLayout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -14,6 +15,8 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import DemosIndex from './pages/demos/DemosIndex';
+import NicheDemoPage from './pages/demos/NicheDemoPage';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -27,8 +30,8 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Layout>
-        <Routes>
+      <Routes>
+        <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
@@ -42,8 +45,12 @@ function App() {
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
-        </Routes>
-      </Layout>
+          <Route path="/demos" element={<DemosIndex />} />
+        </Route>
+        <Route element={<DemoStandaloneLayout />}>
+          <Route path="/demos/:slug" element={<NicheDemoPage />} />
+        </Route>
+      </Routes>
     </Router>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { NICHE_DEMO_LIST } from '../data/nicheDemos';
 import Counter from '../components/Counter';
 import FaqAccordion from '../components/FaqAccordion';
 import AdSense from '../components/AdSense';
@@ -192,6 +193,45 @@ const Home = () => {
             </section>
 
             <section className="section-padding section-alt robot-page-section section--mobile-grid" data-aos="fade-up">
+                <div className="container">
+                    <div className="section-intro">
+                        <span className="section-subtitle">High-demand niches</span>
+                        <h2 className="section-title section-title-business">Industry demo sites (sample layouts)</h2>
+                        <p className="section-lead">
+                            Standalone sample landing pages you can share or pin—for restaurants and cafés, salons,
+                            cleaning, and bakeries. Each follows the same flow: hero, problem, offers, WhatsApp CTA, and
+                            testimonials.
+                        </p>
+                    </div>
+                    <div className="home-niche-demos-grid">
+                        {NICHE_DEMO_LIST.map((demo, i) => (
+                            <Link
+                                key={demo.slug}
+                                to={demo.path}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="home-niche-demo-card"
+                                data-aos="fade-up"
+                                data-aos-delay={i * 70}
+                            >
+                                <div
+                                    className="home-niche-demo-card-image"
+                                    style={{
+                                        '--card-image': `url("${demo.heroImage.replace(/"/g, '%22')}")`,
+                                    }}
+                                />
+                                <div className="home-niche-demo-card-body">
+                                    <h3>{demo.label}</h3>
+                                    <p>{demo.accentNote}</p>
+                                    <span className="home-niche-demo-cta">View demo →</span>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="section-padding robot-page-section section--mobile-grid" data-aos="fade-up">
                 <div className="container">
                     <div className="section-intro">
                         <span className="section-subtitle">Process</span>

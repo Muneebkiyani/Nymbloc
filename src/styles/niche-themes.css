@@ -1,0 +1,877 @@
+/**
+ * Per-niche demo landing themes: distinct palettes, typography, motion, and layout accents.
+ * Classes: .niche-theme-ember | .niche-theme-rose | .niche-theme-aqua | .niche-theme-honey
+ */
+
+@media (prefers-reduced-motion: reduce) {
+    .niche-lp[class*='niche-theme-'] * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ---------- Shared theme shell ---------- */
+.niche-lp[class*='niche-theme-'] .section-title-business,
+.niche-lp[class*='niche-theme-'] .niche-lp-cta-title {
+    color: var(--lp-heading, inherit);
+}
+
+.niche-lp[class*='niche-theme-'] .section-subtitle {
+    color: var(--lp-eyebrow, var(--accent-orange));
+}
+
+.niche-lp[class*='niche-theme-'] .section-lead {
+    color: var(--lp-lead, var(--text-muted));
+}
+
+/* ---------- EMBER — warm restaurant / firelight ---------- */
+.niche-theme-ember {
+    --lp-font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --lp-font-body: 'DM Sans', system-ui, sans-serif;
+    --lp-heading: #1c0a06;
+    --lp-lead: #5c4033;
+    --lp-eyebrow: #c2410c;
+    --lp-surface: #fff7ed;
+    --lp-surface-alt: #ffedd5;
+    --lp-card-border: rgba(194, 65, 12, 0.2);
+    --lp-accent: #ea580c;
+    --lp-accent-soft: #fdba74;
+}
+
+.niche-theme-ember.niche-lp {
+    font-family: var(--lp-font-body);
+    min-height: 100vh;
+    background-color: #3b1e14;
+    background-image: radial-gradient(ellipse 85% 50% at 50% -10%, rgba(249, 115, 22, 0.45) 0%, transparent 55%),
+        linear-gradient(180deg, #2a1510 0%, #4a2519 12%, #fbbf77 12.1%, #ffecd9 38%, #ffd4a8 100%);
+}
+
+.niche-theme-ember .page-header.service-page-hero.niche-lp-hero {
+    position: relative;
+    background-image: linear-gradient(
+            155deg,
+            rgba(69, 10, 10, 0.94) 0%,
+            rgba(180, 60, 20, 0.72) 35%,
+            rgba(234, 88, 12, 0.45) 55%,
+            rgba(28, 8, 6, 0.93) 100%
+        ),
+        var(--service-hero-image);
+    border-bottom: 5px solid #f97316;
+    box-shadow: 0 12px 40px rgba(180, 60, 10, 0.35);
+}
+
+.niche-theme-ember .page-header.service-page-hero.niche-lp-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        195deg,
+        rgba(251, 191, 36, 0.22) 0%,
+        transparent 40%,
+        rgba(127, 29, 29, 0.3) 100%
+    );
+    mix-blend-mode: soft-light;
+}
+
+.niche-theme-ember .page-header.service-page-hero.niche-lp-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.niche-theme-ember .page-header.service-page-hero .section-title,
+.niche-theme-ember .page-header.service-page-hero .niche-demo-headline {
+    font-family: var(--lp-font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45), 0 0 40px rgba(249, 115, 22, 0.25);
+}
+
+.niche-theme-ember .page-header.service-page-hero .section-subtitle {
+    color: #fdba74;
+    text-shadow: 0 0 24px rgba(251, 146, 60, 0.45);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    font-family: var(--lp-font-body);
+}
+
+.niche-theme-ember .page-header.service-page-hero .page-header-lead {
+    font-family: var(--lp-font-body);
+    max-width: 38rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.niche-theme-ember .niche-demo-back-link {
+    color: #fed7aa;
+}
+
+.niche-theme-ember .niche-lp-problem {
+    background: linear-gradient(180deg, #ffecd9 0%, #ffd0a8 100%) !important;
+}
+
+.niche-theme-ember .niche-lp-offer.section-alt {
+    background: linear-gradient(180deg, #ffb380 0%, #ff9a56 45%, #ffe4cc 100%) !important;
+}
+
+.niche-theme-ember .niche-lp-testimonials.section-alt {
+    background: linear-gradient(180deg, #fff1e6 0%, #fecdd3 100%) !important;
+}
+
+.niche-theme-ember .niche-lp-byline {
+    background: linear-gradient(180deg, #3d1d12 0%, #2a1410 100%) !important;
+}
+
+.niche-theme-ember .niche-lp-byline-text,
+.niche-theme-ember .niche-lp-byline .text-link {
+    color: #fde68a !important;
+}
+
+.niche-theme-ember .niche-lp-byline .text-link:hover {
+    color: #fff !important;
+}
+
+.niche-theme-ember .niche-lp-problem-card {
+    background: linear-gradient(145deg, #fff 0%, #fff7ed 100%);
+    border: 1px solid var(--lp-card-border);
+    border-radius: 0 1.25rem 1.25rem 1.25rem;
+    box-shadow: 0 12px 40px rgba(234, 88, 12, 0.12);
+    border-left: 4px solid var(--lp-accent);
+}
+
+.niche-theme-ember .niche-lp-problem-card h3 {
+    font-family: var(--lp-font-display);
+    color: #7c2d12;
+}
+
+.niche-theme-ember .niche-lp-problem-card {
+    animation: lp-ember-rise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.niche-theme-ember .niche-lp-problem-card:nth-child(1) {
+    animation-delay: 0.08s;
+}
+.niche-theme-ember .niche-lp-problem-card:nth-child(2) {
+    animation-delay: 0.18s;
+}
+.niche-theme-ember .niche-lp-problem-card:nth-child(3) {
+    animation-delay: 0.28s;
+}
+
+@keyframes lp-ember-rise {
+    from {
+        opacity: 0;
+        transform: translateY(28px) rotate(-0.5deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+    }
+}
+
+.niche-theme-ember .niche-lp-offer-card {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 1px solid var(--lp-card-border);
+    box-shadow: 0 16px 48px rgba(180, 70, 20, 0.15);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.niche-theme-ember .niche-lp-offer-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 24px 56px rgba(234, 88, 12, 0.22);
+}
+
+.niche-theme-ember .niche-lp-offer-body h3 {
+    font-family: var(--lp-font-display);
+    color: #7c2d12;
+}
+
+.niche-theme-ember .niche-lp-cta-whatsapp {
+    background: linear-gradient(120deg, #431407 0%, #9a3412 45%, #c2410c 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.niche-theme-ember .niche-lp-cta-whatsapp::before {
+    content: '';
+    position: absolute;
+    inset: -40% -20%;
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, transparent 55%);
+    animation: lp-ember-glow 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes lp-ember-glow {
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(8%, 4%) scale(1.08);
+        opacity: 1;
+    }
+}
+
+.niche-theme-ember .niche-lp-cta-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.niche-theme-ember .btn-whatsapp-lg {
+    box-shadow: 0 8px 32px rgba(37, 211, 102, 0.45), 0 0 0 3px rgba(251, 191, 36, 0.35);
+}
+
+.niche-theme-ember .niche-lp-testimonial-card {
+    background: #fff;
+    border-radius: 1.25rem;
+    border: 1px solid var(--lp-card-border);
+    box-shadow: 0 10px 36px rgba(234, 88, 12, 0.1);
+}
+
+.niche-theme-ember .niche-lp-quote {
+    font-family: var(--lp-font-display);
+    font-style: italic;
+    color: #44403c;
+}
+
+/* ---------- ROSE — salon / editorial glam ---------- */
+.niche-theme-rose {
+    --lp-font-display: 'Prata', Georgia, serif;
+    --lp-font-body: 'Manrope', system-ui, sans-serif;
+    --lp-heading: #4c0519;
+    --lp-lead: #6b4a55;
+    --lp-eyebrow: #be185d;
+    --lp-surface: #fdf2f8;
+    --lp-surface-alt: #fce7f3;
+    --lp-card-border: rgba(190, 24, 93, 0.15);
+    --lp-accent: #db2777;
+    --lp-accent-soft: #fbcfe8;
+}
+
+.niche-theme-rose.niche-lp {
+    font-family: var(--lp-font-body);
+    min-height: 100vh;
+    background-color: #4c1d95;
+    background-image: radial-gradient(ellipse 90% 50% at 15% 0%, rgba(244, 114, 182, 0.55) 0%, transparent 55%),
+        linear-gradient(168deg, #312e81 0%, #6b21a8 11%, #fae8ff 11%, #fbcfe8 42%, #ddd6fe 100%);
+}
+
+.niche-theme-rose .page-header.service-page-hero.niche-lp-hero {
+    position: relative;
+    background-image: linear-gradient(
+            120deg,
+            rgba(76, 29, 149, 0.9) 0%,
+            rgba(190, 24, 93, 0.72) 42%,
+            rgba(131, 24, 67, 0.88) 100%
+        ),
+        var(--service-hero-image);
+    border-bottom: 4px solid #e879f9;
+    box-shadow: 0 16px 48px rgba(126, 34, 206, 0.35);
+}
+
+.niche-theme-rose .page-header.service-page-hero.niche-lp-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(233, 213, 255, 0.2) 0%, transparent 35%, rgba(251, 113, 133, 0.25) 100%);
+    mix-blend-mode: soft-light;
+}
+
+.niche-theme-rose .page-header.service-page-hero.niche-lp-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.niche-theme-rose .page-header.service-page-hero .section-title,
+.niche-theme-rose .page-header.service-page-hero .niche-demo-headline {
+    text-shadow: 0 2px 28px rgba(0, 0, 0, 0.4), 0 0 36px rgba(232, 121, 249, 0.35);
+}
+
+.niche-theme-rose .niche-lp-problem {
+    background: linear-gradient(180deg, #fdf4ff 0%, #fae8ff 100%) !important;
+}
+
+.niche-theme-rose .niche-lp-offer.section-alt {
+    background: linear-gradient(180deg, #fbcfe8 0%, #f9a8d4 50%, #fce7f3 100%) !important;
+}
+
+.niche-theme-rose .niche-lp-testimonials.section-alt {
+    background: linear-gradient(180deg, #ede9fe 0%, #ddd6fe 100%) !important;
+}
+
+.niche-theme-rose .niche-lp-byline {
+    background: linear-gradient(180deg, #1e1b4b 0%, #312e81 100%) !important;
+}
+
+.niche-theme-rose .niche-lp-byline-text,
+.niche-theme-rose .niche-lp-byline .text-link {
+    color: #e9d5ff !important;
+}
+
+.niche-theme-rose .niche-lp-byline .text-link:hover {
+    color: #fae8ff !important;
+}
+
+.niche-theme-rose .page-header.service-page-hero .section-subtitle {
+    color: #fbcfe8;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: 600;
+    font-family: var(--lp-font-body);
+}
+
+.niche-theme-rose .page-header.service-page-hero .section-title,
+.niche-theme-rose .page-header.service-page-hero .niche-demo-headline {
+    font-family: var(--lp-font-display);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+}
+
+.niche-theme-rose .page-header.service-page-hero .page-header-lead {
+    font-weight: 500;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.niche-theme-rose .niche-demo-back-link {
+    color: #fce7f3;
+}
+
+.niche-theme-rose .niche-lp-problem-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--lp-card-border);
+    border-radius: 2rem;
+    box-shadow: 0 4px 24px rgba(190, 24, 93, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.niche-theme-rose .niche-lp-problem-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #be185d, #f9a8d4, #be185d);
+    background-size: 200% 100%;
+    animation: lp-rose-shimmer 4s linear infinite;
+}
+
+@keyframes lp-rose-shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+.niche-theme-rose .niche-lp-problem-card {
+    animation: lp-rose-blur 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.niche-theme-rose .niche-lp-problem-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.niche-theme-rose .niche-lp-problem-card:nth-child(2) {
+    animation-delay: 0.22s;
+}
+.niche-theme-rose .niche-lp-problem-card:nth-child(3) {
+    animation-delay: 0.34s;
+}
+
+@keyframes lp-rose-blur {
+    from {
+        opacity: 0;
+        filter: blur(6px);
+        transform: scale(0.96) translateY(16px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1) translateY(0);
+    }
+}
+
+.niche-theme-rose .niche-lp-problem-card h3 {
+    font-family: var(--lp-font-display);
+    color: #831843;
+}
+
+.niche-theme-rose .niche-lp-offer-grid {
+    gap: 1.75rem;
+}
+
+.niche-theme-rose .niche-lp-offer-card {
+    border-radius: 2rem;
+    border: 1px solid var(--lp-card-border);
+    box-shadow: 0 12px 40px rgba(190, 24, 93, 0.1);
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+}
+
+.niche-theme-rose .niche-lp-offer-card:hover {
+    transform: translateY(-8px) rotate(0.5deg);
+    box-shadow: 0 20px 50px rgba(219, 39, 119, 0.18);
+}
+
+.niche-theme-rose .niche-lp-offer-body h3 {
+    font-family: var(--lp-font-display);
+    color: #831843;
+}
+
+.niche-theme-rose .niche-lp-offer-image-wrap {
+    border-radius: 1.75rem 1.75rem 0 0;
+}
+
+.niche-theme-rose .niche-lp-cta-whatsapp {
+    background: linear-gradient(160deg, #500724 0%, #9d174d 40%, #be185d 100%);
+}
+
+.niche-theme-rose .btn-whatsapp-lg {
+    border-radius: 999px;
+    box-shadow: 0 6px 28px rgba(37, 211, 102, 0.4);
+}
+
+.niche-theme-rose .niche-lp-testimonial-card {
+    border-radius: 2rem;
+    background: #fff;
+    border: 1px solid var(--lp-card-border);
+}
+
+.niche-theme-rose .niche-lp-quote {
+    font-family: var(--lp-font-display);
+    color: #44403c;
+}
+
+/* ---------- AQUA — crisp cleaning / tech-fresh ---------- */
+.niche-theme-aqua {
+    --lp-font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --lp-font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --lp-heading: #0f172a;
+    --lp-lead: #475569;
+    --lp-eyebrow: #0891b2;
+    --lp-surface: #ecfeff;
+    --lp-surface-alt: #cffafe;
+    --lp-card-border: rgba(8, 145, 178, 0.22);
+    --lp-accent: #0e7490;
+    --lp-accent-bright: #06b6d4;
+}
+
+.niche-theme-aqua.niche-lp {
+    font-family: var(--lp-font-body);
+    min-height: 100vh;
+    background-color: #0c4a6e;
+    background-image: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(34, 211, 238, 0.35) 0%, transparent 55%),
+        linear-gradient(175deg, #082f49 0%, #155e75 10%, #e0f2fe 10%, #a5f3fc 35%, #ccfbf1 100%);
+}
+
+.niche-theme-aqua .page-header.service-page-hero.niche-lp-hero {
+    position: relative;
+    background-image: linear-gradient(
+            110deg,
+            rgba(8, 47, 73, 0.94) 0%,
+            rgba(14, 116, 144, 0.78) 38%,
+            rgba(13, 148, 136, 0.55) 62%,
+            rgba(15, 23, 42, 0.9) 100%
+        ),
+        var(--service-hero-image);
+    border-bottom: 4px solid #22d3ee;
+    box-shadow: 0 14px 40px rgba(8, 145, 178, 0.35);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), 0 100%);
+}
+
+.niche-theme-aqua .page-header.service-page-hero.niche-lp-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(34, 211, 238, 0.18) 0%, transparent 40%, rgba(16, 185, 129, 0.2) 100%);
+    mix-blend-mode: screen;
+}
+
+.niche-theme-aqua .page-header.service-page-hero.niche-lp-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.niche-theme-aqua .page-header.service-page-hero .section-title,
+.niche-theme-aqua .page-header.service-page-hero .niche-demo-headline {
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35), 0 0 40px rgba(34, 211, 238, 0.25);
+}
+
+.niche-theme-aqua .niche-lp-problem {
+    background: linear-gradient(180deg, #bae6fd 0%, #7dd3fc 100%) !important;
+}
+
+.niche-theme-aqua .niche-lp-offer.section-alt {
+    background: linear-gradient(180deg, #99f6e4 0%, #5eead4 45%, #ccfbf1 100%) !important;
+}
+
+.niche-theme-aqua .niche-lp-testimonials.section-alt {
+    background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 100%) !important;
+}
+
+.niche-theme-aqua .niche-lp-byline {
+    background: linear-gradient(180deg, #0f172a 0%, #134e4a 100%) !important;
+}
+
+.niche-theme-aqua .niche-lp-byline-text,
+.niche-theme-aqua .niche-lp-byline .text-link {
+    color: #a5f3fc !important;
+}
+
+.niche-theme-aqua .niche-lp-byline .text-link:hover {
+    color: #ecfeff !important;
+}
+
+.niche-theme-aqua .page-header.service-page-hero .section-subtitle {
+    color: #67e8f9;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 0.68rem;
+}
+
+.niche-theme-aqua .page-header.service-page-hero .section-title,
+.niche-theme-aqua .page-header.service-page-hero .niche-demo-headline {
+    font-family: var(--lp-font-display);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.niche-theme-aqua .page-header.service-page-hero .page-header-lead {
+    font-weight: 500;
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.niche-theme-aqua .niche-demo-back-link {
+    color: #a5f3fc;
+}
+
+.niche-theme-aqua .niche-lp-problem-card {
+    background: #fff;
+    border: 2px solid var(--lp-card-border);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 0 var(--lp-accent-bright);
+}
+
+.niche-theme-aqua .niche-lp-problem-card {
+    animation: lp-aqua-slide 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.niche-theme-aqua .niche-lp-problem-card:nth-child(1) {
+    animation-delay: 0.06s;
+}
+.niche-theme-aqua .niche-lp-problem-card:nth-child(2) {
+    animation-delay: 0.14s;
+}
+.niche-theme-aqua .niche-lp-problem-card:nth-child(3) {
+    animation-delay: 0.22s;
+}
+
+@keyframes lp-aqua-slide {
+    from {
+        opacity: 0;
+        transform: translateX(-36px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.niche-theme-aqua .niche-lp-problem-card h3 {
+    font-weight: 700;
+    color: #0e7490;
+}
+
+.niche-theme-aqua .niche-lp-offer-card {
+    border-radius: 0.75rem;
+    border: 2px solid var(--lp-card-border);
+    box-shadow: 8px 8px 0 rgba(6, 182, 212, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.niche-theme-aqua .niche-lp-offer-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 rgba(14, 116, 144, 0.35);
+}
+
+.niche-theme-aqua .niche-lp-offer-body h3 {
+    font-weight: 700;
+    color: #0f766e;
+}
+
+.niche-theme-aqua .niche-lp-cta-whatsapp {
+    background: linear-gradient(90deg, #0f172a 0%, #134e4a 50%, #155e75 100%);
+}
+
+.niche-theme-aqua .niche-lp-cta-title {
+    font-family: var(--lp-font-display);
+}
+
+.niche-theme-aqua .btn-whatsapp-lg {
+    animation: lp-aqua-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes lp-aqua-pulse {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+    }
+}
+
+.niche-theme-aqua .niche-lp-testimonial-card {
+    border-radius: 0.75rem;
+    border: 2px solid var(--lp-card-border);
+    background: #fff;
+}
+
+.niche-theme-aqua .niche-lp-quote {
+    font-weight: 500;
+    color: #334155;
+}
+
+.niche-theme-honey {
+    --lp-font-display: 'Fraunces', Georgia, serif;
+    --lp-font-body: 'Nunito', system-ui, sans-serif;
+    --lp-heading: #422006;
+    --lp-lead: #78350f;
+    --lp-eyebrow: #b45309;
+    --lp-surface: #fffbeb;
+    --lp-surface-alt: #fef3c7;
+    --lp-card-border: rgba(180, 83, 9, 0.2);
+    --lp-accent: #d97706;
+    --lp-cream: #fff7ed;
+}
+
+.niche-theme-honey.niche-lp {
+    font-family: var(--lp-font-body);
+    min-height: 100vh;
+    background-color: #713f12;
+    background-image: radial-gradient(ellipse 100% 55% at 50% -5%, rgba(251, 191, 36, 0.6) 0%, transparent 50%),
+        linear-gradient(180deg, #451a03 0%, #92400e 9%, #fef08a 9.2%, #fde68a 30%, #ffedd5 70%, #fcd34d 100%);
+}
+
+.niche-theme-honey .page-header.service-page-hero.niche-lp-hero {
+    position: relative;
+    background-image: linear-gradient(
+            195deg,
+            rgba(69, 26, 3, 0.93) 0%,
+            rgba(180, 83, 9, 0.72) 35%,
+            rgba(245, 158, 11, 0.42) 55%,
+            rgba(67, 20, 7, 0.92) 100%
+        ),
+        var(--service-hero-image);
+    border-radius: 0 0 3rem 3rem;
+    margin-inline: clamp(0px, 2vw, 1.5rem);
+    margin-top: 0.5rem;
+    border: 4px solid #fbbf24;
+    box-shadow: 0 16px 48px rgba(180, 83, 9, 0.4);
+}
+
+.niche-theme-honey .page-header.service-page-hero.niche-lp-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(253, 224, 71, 0.2) 0%, transparent 45%, rgba(120, 53, 15, 0.25) 100%);
+    mix-blend-mode: overlay;
+}
+
+.niche-theme-honey .page-header.service-page-hero.niche-lp-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.niche-theme-honey .page-header.service-page-hero .section-title,
+.niche-theme-honey .page-header.service-page-hero .niche-demo-headline {
+    font-family: var(--lp-font-display);
+    font-weight: 700;
+    text-shadow: 0 2px 28px rgba(0, 0, 0, 0.45), 0 0 32px rgba(251, 191, 36, 0.35);
+}
+
+.niche-theme-honey .page-header.service-page-hero .page-header-lead {
+    font-weight: 600;
+    max-width: 38rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 992px) {
+    .niche-theme-honey .page-header.service-page-hero.niche-lp-hero {
+        margin-inline: 0;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .niche-theme-honey .page-header.service-page-hero.niche-lp-hero::after {
+        border-radius: 0;
+    }
+}
+
+.niche-theme-honey .niche-lp-problem {
+    background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%) !important;
+}
+
+.niche-theme-honey .niche-lp-offer.section-alt {
+    background: linear-gradient(180deg, #fcd34d 0%, #fbbf24 40%, #fed7aa 100%) !important;
+}
+
+.niche-theme-honey .niche-lp-testimonials.section-alt {
+    background: linear-gradient(180deg, #ffedd5 0%, #fdba74 100%) !important;
+}
+
+.niche-theme-honey .niche-lp-byline {
+    background: linear-gradient(180deg, #451a03 0%, #78350f 100%) !important;
+}
+
+.niche-theme-honey .niche-lp-byline-text,
+.niche-theme-honey .niche-lp-byline .text-link {
+    color: #fde68a !important;
+}
+
+.niche-theme-honey .niche-lp-byline .text-link:hover {
+    color: #fff !important;
+}
+
+.niche-theme-honey .page-header.service-page-hero .section-subtitle {
+    color: #fde68a;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    font-family: var(--lp-font-body);
+}
+
+.niche-theme-honey .niche-demo-back-link {
+    color: #fde68a;
+}
+
+.niche-theme-honey .niche-lp-problem-card {
+    background: var(--lp-cream);
+    border: 3px dashed var(--lp-card-border);
+    border-radius: 1.75rem;
+    box-shadow: 6px 6px 0 rgba(217, 119, 6, 0.2);
+}
+
+.niche-theme-honey .niche-lp-problem-card {
+    animation: lp-honey-pop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.niche-theme-honey .niche-lp-problem-card:nth-child(1) {
+    animation-delay: 0.05s;
+}
+.niche-theme-honey .niche-lp-problem-card:nth-child(2) {
+    animation-delay: 0.15s;
+}
+.niche-theme-honey .niche-lp-problem-card:nth-child(3) {
+    animation-delay: 0.25s;
+}
+
+@keyframes lp-honey-pop {
+    from {
+        opacity: 0;
+        transform: scale(0.88) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.niche-theme-honey .niche-lp-problem-card h3 {
+    font-family: var(--lp-font-display);
+    color: #92400e;
+}
+
+.niche-theme-honey .niche-lp-offer-card {
+    border-radius: 2rem;
+    border: 3px solid rgba(180, 83, 9, 0.25);
+    background: #fff;
+    box-shadow: 0 10px 0 rgba(217, 119, 6, 0.15);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+}
+
+.niche-theme-honey .niche-lp-offer-card:hover {
+    transform: translateY(-10px) rotate(-1deg);
+    box-shadow: 0 18px 0 rgba(217, 119, 6, 0.12);
+}
+
+.niche-theme-honey .niche-lp-offer-image-wrap {
+    border-radius: 1.75rem 1.75rem 0 0;
+}
+
+.niche-theme-honey .niche-lp-offer-body h3 {
+    font-family: var(--lp-font-display);
+    color: #92400e;
+}
+
+.niche-theme-honey .niche-lp-cta-whatsapp {
+    background: linear-gradient(100deg, #78350f 0%, #b45309 40%, #d97706 100%);
+    border-radius: 2rem 2rem 0 0;
+    margin-inline: clamp(0px, 3vw, 2rem);
+}
+
+@media (max-width: 992px) {
+    .niche-theme-honey .niche-lp-cta-whatsapp {
+        margin-inline: 0;
+        border-radius: 0;
+    }
+}
+
+.niche-theme-honey .niche-lp-testimonial-card {
+    border-radius: 1.75rem;
+    background: #fff;
+    border: 3px solid var(--lp-card-border);
+    transform: rotate(-0.6deg);
+}
+
+.niche-theme-honey .niche-lp-testimonial-card:nth-child(even) {
+    transform: rotate(0.6deg);
+}
+
+.niche-theme-honey .niche-lp-testimonial-card:hover {
+    transform: rotate(0deg) scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.niche-theme-honey .niche-lp-quote {
+    font-family: var(--lp-font-display);
+    color: #57534e;
+}
+
+.niche-theme-honey .btn-whatsapp-lg {
+    border-radius: 999px;
+    font-family: var(--lp-font-body);
+    font-weight: 800;
+}
+
+/* Testimonial names — match theme palette */
+.niche-theme-ember .niche-lp-testimonial-card strong {
+    color: #7c2d12;
+}
+
+.niche-theme-rose .niche-lp-testimonial-card strong {
+    color: #831843;
+}
+
+.niche-theme-aqua .niche-lp-testimonial-card strong {
+    color: #0e7490;
+}
+
+.niche-theme-honey .niche-lp-testimonial-card strong {
+    color: #92400e;
+}

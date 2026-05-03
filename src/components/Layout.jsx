@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { ScrollTrigger } from '../utils/gsapClient';
 import Header from './Header';
 import Footer from './Footer';
@@ -8,7 +8,7 @@ import CookieConsent from './CookieConsent';
 import AOS from 'aos';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
 
-const Layout = ({ children }) => {
+const Layout = () => {
     const { pathname } = useLocation();
     useSmoothScroll();
 
@@ -35,7 +35,9 @@ const Layout = ({ children }) => {
         <div className="app-layout site-shell">
             <Seo />
             <Header />
-            <main className="site-main">{children}</main>
+            <main className="site-main">
+                <Outlet />
+            </main>
             <Footer />
             <CookieConsent />
         </div>

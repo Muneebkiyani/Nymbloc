@@ -63,4 +63,9 @@ export const ROUTE_META = {
         description:
             'Terms and conditions for using NYMBLOC’s website and engaging our digital services.',
     },
+    '/demos': {
+        title: 'Industry website demos | Restaurants, salons, cleaning, bakeries | NYMBLOC',
+        description:
+            'Sample one-page layouts for restaurants, salons, cleaning companies, and bakeries—hero, menu or services, about, and WhatsApp contact. Shareable URLs for Pinterest and client previews.',
+    },
 };

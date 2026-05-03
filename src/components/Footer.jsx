@@ -41,6 +41,15 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className="footer-col">
+                        <h4>Industry demos</h4>
+                        <ul>
+                            <li><Link to="/demos/restaurants" target="_blank" rel="noopener noreferrer">Restaurants & Cafes</Link></li>
+                            <li><Link to="/demos/salons" target="_blank" rel="noopener noreferrer">Salons & Beauty</Link></li>
+                            <li><Link to="/demos/cleaning" target="_blank" rel="noopener noreferrer">Cleaning Services</Link></li>
+                            <li><Link to="/demos/bakeries" target="_blank" rel="noopener noreferrer">Bakeries & Food Shops</Link></li>
+                        </ul>
+                    </div>
+                    <div className="footer-col">
                         <h4>Contact Us</h4>
                         <div className="footer-contact-item">
                             <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="18"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>

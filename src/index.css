@@ -239,6 +239,35 @@ header.robot-header.header-scrolled {
 .nav-links a:not(.btn-primary):hover::after,
 .nav-links a.active-link:not(.btn-primary)::after { width: 100%; }
 
+/* Demos dropdown label (no hub page — only landing-page links in menu) */
+.nav-links span.dropdown-toggle {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    position: relative;
+    padding: 5px 0;
+    cursor: pointer;
+}
+.nav-links span.dropdown-toggle::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: var(--accent-gradient);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+.nav-links span.dropdown-toggle:hover,
+.nav-links span.dropdown-toggle.active-link {
+    color: var(--primary-navy);
+}
+.nav-links span.dropdown-toggle:hover::after,
+.nav-links span.dropdown-toggle.active-link::after {
+    width: 100%;
+}
+
 .mobile-menu-btn { display: none; font-size: 1.5rem; cursor: pointer; background: none; border: none; color: var(--primary-navy); }
 
 .nav-backdrop {
@@ -316,6 +345,471 @@ header.robot-header.header-scrolled {
     .service-intro-block {
         text-align: left;
     }
+}
+
+/* --- Industry demo pages (Pinterest-friendly share URLs) --- */
+.niche-demo-headline {
+    max-width: 22ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .niche-demo-headline {
+        max-width: none;
+    }
+}
+
+.niche-demo-back-home {
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+    color: rgba(248, 250, 252, 0.92);
+}
+
+.niche-demo-back-link {
+    color: rgba(248, 250, 252, 0.98);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.niche-demo-back-link:hover {
+    color: #fff;
+}
+
+.niche-demo-back-sep {
+    margin: 0 0.35rem;
+    opacity: 0.7;
+}
+
+.niche-demo-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    justify-content: center;
+    margin-top: 1.75rem;
+}
+
+.niche-demo-hero-actions--footer {
+    justify-content: center;
+}
+
+.btn-whatsapp {
+    background: #25d366;
+    color: #fff !important;
+    border: 2px solid #25d366;
+    box-shadow: 0 2px 12px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:hover {
+    background: #20bd5a;
+    border-color: #20bd5a;
+    color: #fff !important;
+    transform: translateY(-1px);
+}
+
+.btn-whatsapp-block {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.niche-demo-outline-light {
+    border-color: rgba(255, 255, 255, 0.85) !important;
+    color: #fff !important;
+    background: rgba(15, 23, 42, 0.25);
+}
+
+.niche-demo-outline-light:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+.niche-demo-menu-section .niche-demo-menu-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .niche-demo-menu-section .niche-demo-menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.niche-demo-menu-card {
+    background: var(--bg-card, #fff);
+    border: 1px solid var(--border-light, rgba(15, 23, 42, 0.08));
+    border-radius: var(--border-radius, 12px);
+    padding: 1.35rem 1.5rem;
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.06));
+}
+
+.niche-demo-menu-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.65rem;
+}
+
+.niche-demo-menu-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.35;
+}
+
+.niche-demo-price {
+    font-weight: 700;
+    color: var(--accent-orange, #ea580c);
+    white-space: nowrap;
+}
+
+.niche-demo-menu-card p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+.niche-demo-about-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+}
+
+@media (min-width: 900px) {
+    .niche-demo-about-grid {
+        grid-template-columns: 1fr minmax(260px, 340px);
+    }
+}
+
+.niche-demo-about-text {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-body);
+}
+
+.niche-demo-about-aside {
+    background: rgba(15, 23, 42, 0.04);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: var(--border-radius, 12px);
+    padding: 1.5rem 1.75rem;
+}
+
+.niche-demo-aside-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin: 0 0 0.5rem;
+}
+
+.niche-demo-about-aside p:last-of-type {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.niche-demo-footer-cta {
+    border-top: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+/* Niche landing pages: Hero → Problem → Offer → WhatsApp CTA → Testimonials */
+.niche-lp-hero-credit {
+    margin: 1.25rem auto 0;
+    max-width: 38rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: rgba(248, 250, 252, 0.82);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.niche-lp-problem-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+    .niche-lp-problem-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.niche-lp-problem-card {
+    background: var(--bg-card, #fff);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: var(--border-radius, 12px);
+    padding: 1.35rem 1.4rem;
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.06));
+}
+
+.niche-lp-problem-card h3 {
+    margin: 0 0 0.65rem;
+    font-size: 1rem;
+    line-height: 1.35;
+    color: var(--primary-navy);
+}
+
+.niche-lp-problem-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+}
+
+.niche-lp-offer-grid {
+    display: grid;
+    gap: 1.35rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .niche-lp-offer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1100px) {
+    .niche-lp-offer-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.niche-lp-offer-card {
+    background: var(--bg-card, #fff);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: var(--border-radius, 12px);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.06));
+}
+
+.niche-lp-offer-image-wrap {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #0f172a;
+}
+
+.niche-lp-offer-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.niche-lp-offer-body {
+    padding: 1.1rem 1.2rem 1.25rem;
+}
+
+.niche-lp-offer-body h3 {
+    margin: 0 0 0.45rem;
+    font-size: 1.05rem;
+    line-height: 1.3;
+}
+
+.niche-lp-offer-body p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+}
+
+.niche-lp-cta-whatsapp {
+    background: linear-gradient(165deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    color: #f8fafc;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.niche-lp-cta-inner {
+    max-width: 36rem;
+    margin: 0 auto;
+}
+
+.niche-lp-cta-title {
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    margin: 0 0 0.75rem;
+    color: #f8fafc;
+}
+
+.niche-lp-cta-lead {
+    margin: 0 0 1.35rem;
+    color: rgba(248, 250, 252, 0.88);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.btn-whatsapp-lg {
+    padding: 0.85rem 1.75rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.niche-lp-cta-phone {
+    margin: 1rem 0 0;
+    font-size: 0.9rem;
+    color: rgba(248, 250, 252, 0.65);
+}
+
+.niche-lp-testimonials-disclaimer {
+    font-size: 0.95rem !important;
+    color: var(--text-muted) !important;
+}
+
+.niche-lp-testimonial-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+    .niche-lp-testimonial-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.niche-lp-testimonial-card {
+    background: var(--bg-card, #fff);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: var(--border-radius, 12px);
+    padding: 1.35rem 1.4rem;
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.06));
+}
+
+.niche-lp-quote {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--text-body);
+}
+
+.niche-lp-testimonial-card footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.niche-lp-testimonial-card strong {
+    font-size: 0.95rem;
+    color: var(--primary-navy);
+}
+
+.niche-lp-role {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.niche-lp-byline {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.niche-lp-byline-text {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.home-niche-demos-grid,
+.niche-demo-index-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .home-niche-demos-grid,
+    .niche-demo-index-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1100px) {
+    .home-niche-demos-grid,
+    .niche-demo-index-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.home-niche-demo-card,
+.niche-demo-index-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    background: var(--bg-card, #fff);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: var(--border-radius, 12px);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.06));
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-niche-demo-card:hover,
+.niche-demo-index-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md, 0 8px 24px rgba(0, 0, 0, 0.08));
+}
+
+.home-niche-demo-card-image,
+.niche-demo-index-card-image {
+    height: 140px;
+    background-image: var(--card-image, none);
+    background-size: cover;
+    background-position: center;
+}
+
+@media (min-width: 1100px) {
+    .home-niche-demo-card-image,
+    .niche-demo-index-card-image {
+        height: 120px;
+    }
+}
+
+.home-niche-demo-card-body,
+.niche-demo-index-card-body {
+    padding: 1.15rem 1.25rem 1.35rem;
+}
+
+.home-niche-demo-card-body h3,
+.niche-demo-index-card-body h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+    line-height: 1.3;
+}
+
+.home-niche-demo-card-body p,
+.niche-demo-index-card-body p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+.home-niche-demo-cta,
+.niche-demo-index-cta {
+    display: inline-block;
+    margin-top: 0.85rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--accent-orange, #ea580c);
+}
+
+.service-page.niche-demo-index .niche-demo-index-card-body h2 {
+    font-size: 1.15rem;
 }
 
 .header-cta {
@@ -1039,7 +1533,7 @@ footer.robot-footer .footer-col p,
 footer.robot-footer .footer-bottom {
     color: var(--text-muted);
 }
-.footer-grid { border-bottom: 1px solid var(--border-color); display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; padding-bottom: 60px; margin-bottom: 30px;}
+.footer-grid { border-bottom: 1px solid var(--border-color); display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr; gap: 32px 28px; padding-bottom: 60px; margin-bottom: 30px;}
 .footer-logo { max-height: 80px; width: auto; max-width: 300px; display: block; object-fit: contain; margin-bottom: 25px;}
 .footer-col h4 { color: var(--primary-navy); font-size: 1.2rem; font-weight: 700; margin-bottom: 25px; }
 .footer-col ul li { margin-bottom: 12px; }
@@ -3545,6 +4039,10 @@ h2.robot-heading {
 
 /* AOS: load order is aos.css then index.css (main.jsx) — softer fades, AdSense-friendly */
 @media (prefers-reduced-motion: no-preference) {
+    [data-aos='fade-in'] {
+        transform: translate3d(0, 22px, 0);
+    }
+
     [data-aos='fade-up'] {
         transform: translate3d(0, 28px, 0);
     }

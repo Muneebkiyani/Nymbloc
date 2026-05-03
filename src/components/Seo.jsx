@@ -11,6 +11,7 @@ import {
     trimMetaDescription,
 } from '../seo/siteConfig';
 import { ROUTE_META } from '../seo/routeMeta';
+import { getNicheDemoBySlug } from '../data/nicheDemos';
 
 function organizationJsonLd() {
     return {
@@ -96,10 +97,29 @@ export default function Seo() {
             robots = 'noindex, follow';
         }
     } else {
-        const meta = ROUTE_META[pathname];
-        if (meta) {
-            title = meta.title;
-            description = meta.description;
+        const demoMatch = /^\/demos\/([^/]+)$/.exec(pathname);
+        if (pathname === '/demos') {
+            const m = ROUTE_META['/demos'];
+            title = m.title;
+            description = m.description;
+        } else if (demoMatch) {
+            const slug = demoMatch[1];
+            const demo = getNicheDemoBySlug(slug);
+            if (demo) {
+                title = demo.seoTitle;
+                description = trimMetaDescription(demo.seoDescription);
+                ogImage = absoluteImageUrl(demo.heroImage);
+            } else {
+                title = `Demo not found | ${SITE_NAME}`;
+                description = 'This preview link is invalid or out of date.';
+                robots = 'noindex, follow';
+            }
+        } else {
+            const meta = ROUTE_META[pathname];
+            if (meta) {
+                title = meta.title;
+                description = meta.description;
+            }
         }
     }
 

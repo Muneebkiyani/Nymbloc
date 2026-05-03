@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
+    const { pathname } = useLocation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isServicesOpen, setIsServicesOpen] = useState(false);
+    const [isDemosOpen, setIsDemosOpen] = useState(false);
+    const demosNavActive = pathname === '/demos';
 
     useEffect(() => {
         const handleScroll = () => {
@@ -24,6 +27,7 @@ const Header = () => {
     const closeMenu = () => {
         setIsMenuOpen(false);
         setIsServicesOpen(false);
+        setIsDemosOpen(false);
     };
 
     return (
@@ -72,6 +76,40 @@ const Header = () => {
                                 <li><Link to="/services/website" onClick={closeMenu}>Website Development</Link></li>
                                 <li><Link to="/services/application" onClick={closeMenu}>Application Development</Link></li>
                                 <li><Link to="/services/wordpress" onClick={closeMenu}>WordPress Sites</Link></li>
+                            </ul>
+                        </li>
+                        <li
+                            className="dropdown"
+                            onMouseEnter={() => window.innerWidth > 992 && setIsDemosOpen(true)}
+                            onMouseLeave={() => window.innerWidth > 992 && setIsDemosOpen(false)}
+                        >
+                            <span
+                                role="button"
+                                tabIndex={0}
+                                className={`dropdown-toggle ${demosNavActive || isDemosOpen ? 'active-link' : ''}`}
+                                aria-expanded={isDemosOpen}
+                                aria-haspopup="true"
+                                onClick={() => {
+                                    if (window.innerWidth <= 992) {
+                                        setIsDemosOpen(!isDemosOpen);
+                                    }
+                                }}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' || e.key === ' ') {
+                                        e.preventDefault();
+                                        if (window.innerWidth <= 992) {
+                                            setIsDemosOpen(!isDemosOpen);
+                                        }
+                                    }
+                                }}
+                            >
+                                Demos <span className={`arrow ${isDemosOpen ? 'up' : ''}`}>▾</span>
+                            </span>
+                            <ul className={`dropdown-menu ${isDemosOpen ? 'show' : ''}`} role="menu">
+                                <li><Link to="/demos/restaurants" target="_blank" rel="noopener noreferrer" onClick={closeMenu} role="menuitem">Restaurants & Cafes</Link></li>
+                                <li><Link to="/demos/salons" target="_blank" rel="noopener noreferrer" onClick={closeMenu} role="menuitem">Salons & Beauty</Link></li>
+                                <li><Link to="/demos/cleaning" target="_blank" rel="noopener noreferrer" onClick={closeMenu} role="menuitem">Cleaning Services</Link></li>
+                                <li><Link to="/demos/bakeries" target="_blank" rel="noopener noreferrer" onClick={closeMenu} role="menuitem">Bakeries & Food Shops</Link></li>
                             </ul>
                         </li>
                         <li><NavLink to="/blog" className={({ isActive }) => isActive ? 'active-link' : ''} onClick={closeMenu}>Blog</NavLink></li>
