@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const About = () => {
     return (
@@ -8,8 +9,9 @@ const About = () => {
                     <span className="section-subtitle">Get to know us</span>
                     <h1 className="section-title reveal-text">About NYMBLOC</h1>
                     <p className="page-header-lead">
-                        We are designers and engineers who help businesses ship websites and software that are easy to
-                        understand, fast to load, and straightforward to maintain.
+                        NYMBLOC is a remote-first web studio: we plan, design, and build marketing sites, WordPress and
+                        WooCommerce stores, and custom web applications for teams that care about clarity, speed, and
+                        maintainability—not buzzwords on a slide deck.
                     </p>
                 </div>
             </section>
@@ -21,22 +23,61 @@ const About = () => {
                             <img src="/assets/expertise.jpg" alt="NYMBLOC Team" className="responsive-img" />
                         </div>
                         <div className="about-text" data-aos="fade-left">
-                            <h2 className="section-title">Our Story</h2>
-                            <p>Founded with the vision of simplifying digital transformation, NYMBLOC has grown into a premier agency known for technical excellence and creative innovation. We believe that every block of code should serve a purpose and contribute to a larger, scalable ecosystem.</p>
+                            <h2 className="section-title">Our story</h2>
+                            <p>
+                                NYMBLOC started from a simple frustration: too many business websites looked polished in a
+                                pitch deck but felt slow, vague, or fragile once real customers used them. We wanted a
+                                practice where scope is honest, performance is planned—not patched later—and content owners
+                                can update copy without breaking layout.
+                            </p>
                             <br />
-                            <p>Our expertise spans across modern web technologies, allowing us to build everything from reactive frontends to robust enterprise backends.</p>
+                            <p>
+                                Today we ship production-grade React and static sites, WordPress and WooCommerce builds,
+                                and application-style experiences when logged-in workflows or integrations are the core
+                                product. Every engagement combines UX judgment with engineering discipline: accessibility
+                                basics, sensible analytics, security hygiene, and hosting choices that match how much you
+                                want to operate yourself.
+                            </p>
+                            <br />
+                            <p>
+                                Our{' '}
+                                <Link to="/blog" className="text-link">
+                                    blog
+                                </Link>{' '}
+                                is written for operators and owners—pricing guides, hosting trade-offs, SEO and analytics
+                                primers—not keyword fluff. We cite sources, avoid hype, and update articles when standards
+                                change so readers get durable guidance.
+                            </p>
                             <ul className="feature-list" style={{ marginTop: '20px' }}>
-                                <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/></svg>Innovation-Driven Approach</li>
-                                <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/></svg>Client-Centric Solutions</li>
-                                <li><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"/></svg>Excellence in Execution</li>
+                                <li>
+                                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    Documented discovery, milestones, and staging before launch
+                                </li>
+                                <li>
+                                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    Performance, SEO structure, and accessibility treated as requirements—not extras
+                                </li>
+                                <li>
+                                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    Source ownership and clear handoffs when the build is complete
+                                </li>
                             </ul>
                         </div>
                     </div>
 
                     <div className="mission-vision" data-aos="fade-up">
                         <div className="mv-card" data-aos="fade-up" data-aos-delay="0">
-                            <h3>Our Mission</h3>
-                            <p>To empower businesses by providing high-quality, scalable digital solutions that drive growth and foster innovation in an ever-evolving digital landscape.</p>
+                            <h3>Our mission</h3>
+                            <p>
+                                Help growing organizations ship digital experiences that load fast, explain clearly, and
+                                stay secure—without trapping them in opaque retainers or stacks they cannot operate.
+                            </p>
                         </div>
                         <div className="mv-card" data-aos="fade-up" data-aos-delay="80">
                             <h3>Our Vision</h3>

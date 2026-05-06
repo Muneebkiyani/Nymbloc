@@ -79,6 +79,10 @@ export const BLOG_COVERS = {
         coverImage: U('photo-1533750446969-255bbf191920'),
         coverAlt: 'Laptop with notes on a desk—email, newsletters, and respectful lead capture.',
     },
+    'website-project-brief-how-to-write-one': {
+        coverImage: U('photo-1517245386807-b43f365ce730'),
+        coverAlt: 'Team collaborating at a table with laptops—structured discovery for a web project brief.',
+    },
 };
 
 const DEFAULT_COVER = {

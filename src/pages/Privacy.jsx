@@ -9,7 +9,7 @@ const Privacy = () => {
                     <span className="section-subtitle">Legal</span>
                     <h1 className="section-title">Privacy Policy</h1>
                     <p className="page-header-lead">
-                        Last updated: April 27, 2026. This policy describes how NYMBLOC (“we”, “us”) handles
+                        Last updated: May 6, 2026. This policy describes how NYMBLOC (“we”, “us”) handles
                         information when you use nymbloc.com and related services.
                     </p>
                 </div>
@@ -46,9 +46,18 @@ const Privacy = () => {
                     <h2>4. Cookies and similar technologies</h2>
                     <p>
                         Our site may use cookies or similar technologies for essential functionality, preferences,
-                        or analytics and advertising where enabled. You can control cookies through your browser
-                        settings. If we use advertising or analytics partners, their use of data is governed by
-                        their respective policies and any consent mechanisms shown on the site.
+                        or analytics and advertising where enabled. Where Google AdSense or similar programmes serve
+                        ads, Google may use cookies as described in{' '}
+                        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">
+                            Google policies on advertising technologies
+                        </a>{' '}
+                        (technologies used in ads) and its{' '}
+                        <a href="https://business.safety.google/privacy/" target="_blank" rel="noopener noreferrer">
+                            Privacy & Terms for partners
+                        </a>
+                        . You can control cookies through your browser settings and through any consent banner shown on
+                        this site. Analytics or advertising partners process data under their own policies subject to
+                        your choices and applicable law.
                     </p>
 
                     <h2>5. Retention</h2>

@@ -458,7 +458,7 @@ const blogPostsRaw = [
         slug: 'accessibility-matters-for-business',
         title: 'Why Web Accessibility Matters for Business Sites',
         date: '2026-03-18',
-        readTime: '8 min read',
+        readTime: '11 min read',
         excerpt:
             'Legal exposure aside, accessible sites reach more customers and tend to be cleaner under the hood.',
         sections: [
@@ -480,8 +480,28 @@ const blogPostsRaw = [
                 ],
             },
             {
+                type: 'h2',
+                text: 'Why this is not only a compliance checkbox',
+            },
+            {
                 type: 'p',
-                text: 'Automated scanners catch a fraction of issues; manual testing with keyboard and screen readers still matters for forms and dynamic components.',
+                text: 'Roughly one in four adults in the United States lives with a disability; globally the share is substantial as well. If navigation, contrast, or forms exclude those visitors, you are turning away revenue that competitors may capture with modest fixes. Accessible markup—semantic headings, descriptive buttons, labeled inputs—also helps search engines understand pages.',
+            },
+            {
+                type: 'h2',
+                text: 'Media and motion',
+            },
+            {
+                type: 'p',
+                text: 'Provide captions or transcripts for video with speech; offer pause controls for carousels; avoid autoplay audio that hijacks screen readers. Decorative images should use empty alt attributes so assistive tech skips them intentionally.',
+            },
+            {
+                type: 'h2',
+                text: 'Testing beyond automated scans',
+            },
+            {
+                type: 'p',
+                text: 'Tools such as axe or Lighthouse find obvious failures but miss context: whether alt text is meaningful, whether error messages make sense when read aloud, or whether focus order follows visual logic. Schedule quarterly keyboard passes after major launches.',
             },
         ],
     },
@@ -489,7 +509,7 @@ const blogPostsRaw = [
         slug: 'landing-page-vs-full-website',
         title: 'Landing Page vs Full Website: When to Use Each',
         date: '2026-03-22',
-        readTime: '6 min read',
+        readTime: '10 min read',
         excerpt:
             'Campaign landers focus on one offer; full sites build brand depth and SEO. Match the asset to the goal.',
         sections: [
@@ -498,8 +518,44 @@ const blogPostsRaw = [
                 text: 'A landing page is a single focused URL designed around one conversion goal—often used with paid ads or email campaigns. A full website supports multiple services, trust pages, resources, and organic discovery.',
             },
             {
+                type: 'h2',
+                text: 'Information architecture: one job vs many jobs',
+            },
+            {
                 type: 'p',
-                text: 'Use landing pages when you need message match for a specific audience and offer. Build or expand a full site when you need authority content, navigation between services, and long-term SEO.',
+                text: 'Landing pages intentionally strip navigation noise so the visitor cannot wander into unrelated pages mid-decision. Full sites intentionally expose navigation so prospects can validate credibility (About, team, case evidence), compare offers (pricing tiers, service pages), and find support answers (FAQ, docs). If you force a multi-intent visitor through a lander, you often increase bounce—not conversions.',
+            },
+            {
+                type: 'h2',
+                text: 'SEO and organic discovery',
+            },
+            {
+                type: 'p',
+                text: 'Landing pages can rank for tight queries when they earn links and match intent, but most organic programs need a cluster of related pages: topical articles, service detail pages, and localized landing pages where relevant. A brochure site with thin pages still struggles; the advantage of a full site is room to publish helpful content without cramming everything above the fold.',
+            },
+            {
+                type: 'h2',
+                text: 'Campaign measurement vs brand measurement',
+            },
+            {
+                type: 'p',
+                text: 'Use landing pages when you need clean attribution for a single offer and audience segment—message match from ad to headline matters more than showcasing your whole company. Use a full site when buyers research across sessions: they compare vendors, read educational posts, and return later via branded search.',
+            },
+            {
+                type: 'h2',
+                text: 'When to graduate from landers to a site',
+            },
+            {
+                type: 'ul',
+                items: [
+                    'You are expanding services or regions and one page cannot explain them without becoming a novel.',
+                    'Support and sales keep answering the same questions that deserve permanent FAQ or documentation pages.',
+                    'Organic traffic is a strategic channel—not only paid acquisition.',
+                ],
+            },
+            {
+                type: 'p',
+                text: 'Hybrid setups are normal: a flagship marketing site plus dedicated landing pages for campaigns. The mistake is treating your only URL like a slide deck—beautiful but thin—when buyers expect depth before they commit.',
             },
         ],
     },
@@ -507,7 +563,7 @@ const blogPostsRaw = [
         slug: 'outsourcing-development-red-flags',
         title: 'Red Flags When Outsourcing Web Development',
         date: '2026-03-28',
-        readTime: '9 min read',
+        readTime: '13 min read',
         excerpt:
             'Opaque pricing, no staging process, and missing ownership clauses—warning signs to avoid.',
         sections: [
@@ -525,11 +581,25 @@ const blogPostsRaw = [
             },
             {
                 type: 'h2',
-                text: 'Pricing should map to scope',
+                text: 'Contract checklist before you pay deposits',
+            },
+            {
+                type: 'ul',
+                items: [
+                    'Intellectual property: who owns code, designs, accounts, and third-party licenses after final payment?',
+                    'Hosting and domains registered in your name—or documented transfers when milestones complete.',
+                    'Change orders in writing with revised timeline and cost, not informal chat promises.',
+                    'Accessibility or performance targets called out if they matter for procurement.',
+                    'Warranty/support window defined with realistic response expectations.',
+                ],
+            },
+            {
+                type: 'h2',
+                text: 'Tooling transparency',
             },
             {
                 type: 'p',
-                text: 'Fixed bids need defined requirements; hourly or retainer models need clear reporting. Either can work—opacity cannot.',
+                text: 'You should receive credentials or collaborator access to version control, hosting, CMS admin, analytics, and DNS—not discover everything lives in the vendor’s personal accounts during an emergency handoff.',
             },
         ],
     },
@@ -537,7 +607,7 @@ const blogPostsRaw = [
         slug: 'planning-a-saas-mvp',
         title: 'Planning a SaaS MVP Without Overbuilding',
         date: '2026-04-04',
-        readTime: '11 min read',
+        readTime: '14 min read',
         excerpt:
             'Scope the smallest version that validates value, billing, and retention—not every feature you imagine.',
         sections: [
@@ -561,13 +631,42 @@ const blogPostsRaw = [
                 type: 'p',
                 text: 'Even a simple subscription with manual onboarding teaches you about willingness to pay. Plan support paths: email, docs, or in-app guidance—otherwise churn will be ambiguous noise.',
             },
+            {
+                type: 'h2',
+                text: 'Scope fences that prevent drift',
+            },
+            {
+                type: 'p',
+                text: 'Write a one-page “not now” list: integrations you will postpone, reports you will export manually first, roles you will simulate with scripts instead of full RBAC. Revisit that list only after you see retention and expansion revenue—not because a stakeholder feels impatient.',
+            },
+            {
+                type: 'h2',
+                text: 'Non-functional requirements still matter',
+            },
+            {
+                type: 'ul',
+                items: [
+                    'Backups and disaster recovery for customer data.',
+                    'Logging that lets you answer “what happened to account X?” without guessing.',
+                    'Rate limiting and basic abuse prevention once you expose APIs.',
+                    'A migration story if you are replacing spreadsheets—imports beat heroic manual entry.',
+                ],
+            },
+            {
+                type: 'h2',
+                text: 'When to ignore feature requests temporarily',
+            },
+            {
+                type: 'p',
+                text: 'Enterprise procurement checklists often demand SSO, SOC reports, and complex RBAC before a pilot proves adoption. Unless those buyers are your day-one segment, park those asks behind a validated wedge customer who pays annually without bespoke procurement theater.',
+            },
         ],
     },
     {
         slug: 'email-capture-without-being-spammy',
         title: 'Email Capture That Respects Visitors',
         date: '2026-04-10',
-        readTime: '7 min read',
+        readTime: '11 min read',
         excerpt:
             'Lead magnets, timing, and consent copy that build trust instead of annoying pop-ups.',
         sections: [
@@ -577,15 +676,110 @@ const blogPostsRaw = [
             },
             {
                 type: 'h2',
-                text: 'Timing and frequency',
+                text: 'Consent copy that holds up',
             },
             {
                 type: 'p',
-                text: 'Full-screen pop-ups on first second of visit frustrate users and can hurt engagement metrics. Consider exit intent, scroll depth, or contextual inline forms on resource pages.',
+                text: 'Checkboxes should describe what someone is opting into: topics, approximate cadence, and whether you share data with sponsors. Pre-checked boxes for marketing email are poor practice and illegal in several jurisdictions. If you run ads or pixels, align your privacy policy with what actually fires on the page.',
+            },
+            {
+                type: 'h2',
+                text: 'Lead magnets that feel worth an inbox slot',
+            },
+            {
+                type: 'ul',
+                items: [
+                    'Templates tied to a specific pain (cash-flow spreadsheet, hiring rubric, site launch checklist).',
+                    'Short email courses where each message teaches one idea—not repeats your sales pitch.',
+                    'Curated resource lists maintained quarterly so subscribers trust freshness.',
+                ],
+            },
+            {
+                type: 'h2',
+                text: 'Timing and presentation',
             },
             {
                 type: 'p',
-                text: 'Disclose how often you email and make unsubscribe obvious. Trust compounds; dark patterns burn it.',
+                text: 'Full-screen pop-ups on the first second of a visit frustrate users and can depress engagement. Prefer contextual placements: end of useful articles, sidebars on desktop where they do not cover reading flow, or exit prompts used sparingly. Mobile layouts deserve smaller footprints—sticky bars beat modal stacks.',
+            },
+            {
+                type: 'h2',
+                text: 'Deliverability basics',
+            },
+            {
+                type: 'p',
+                text: 'Authenticate sending domains with SPF, DKIM, and DMARC guidance from your ESP; purge bounced addresses; segment inactive subscribers instead of blasting cold lists. A smaller engaged audience outperforms vanity totals—and protects your domain reputation.',
+            },
+            {
+                type: 'p',
+                text: 'Disclose how often you email, honor unsubscribes immediately at the link level, and avoid burying preferences three menus deep. Trust compounds when expectations match reality.',
+            },
+        ],
+    },
+    {
+        slug: 'website-project-brief-how-to-write-one',
+        title: 'How to Write a Website Project Brief That Saves Time and Money',
+        date: '2026-05-06',
+        readTime: '13 min read',
+        excerpt:
+            'Goals, audiences, content sources, integrations, and acceptance criteria—organized so proposals match reality.',
+        sections: [
+            {
+                type: 'p',
+                text: 'Most budget blowups trace back to fuzzy briefs: stakeholders disagree about priorities, assets arrive late, or “simple” integrations hide legacy systems. A disciplined brief does not need perfect prose—it needs decisions written down so estimates compare apples to apples.',
+            },
+            {
+                type: 'h2',
+                text: 'Start with outcomes, not features',
+            },
+            {
+                type: 'p',
+                text: 'List the three jobs the site must accomplish in the next twelve months: for example, qualified inbound leads, self-serve bookings, or authenticated customer dashboards. Tie each outcome to a measurable signal (form completions per week, average order value, login frequency). Features emerge from outcomes; reversing that order invites shelf-ware.',
+            },
+            {
+                type: 'h2',
+                text: 'Audience and journeys',
+            },
+            {
+                type: 'ul',
+                items: [
+                    'Primary persona: role, pain, objections, and preferred proof (reviews, certifications, demos).',
+                    'Secondary audiences such as press, recruits, or regulators—note if they need dedicated pages.',
+                    'Primary conversion paths: contact, purchase, signup, support ticket—each with required fields.',
+                ],
+            },
+            {
+                type: 'h2',
+                text: 'Brand, content, and assets',
+            },
+            {
+                type: 'p',
+                text: 'Specify logo formats, color tokens, typography licenses, photography sources, and voice/tone notes. Call out which pages need legal review and who owns approvals. If migration from an old site matters, inventory URLs that must redirect and content that is obsolete.',
+            },
+            {
+                type: 'h2',
+                text: 'Technical constraints and integrations',
+            },
+            {
+                type: 'p',
+                text: 'Document CRMs, ESPs, analytics IDs, payment processors, SSO providers, and APIs—with sandbox access timelines if vendors must approve keys. Mention hosting preferences, data residency needs, and any accessibility or performance targets procurement expects (WCAG level, Core Web Vitals budgets).',
+            },
+            {
+                type: 'h2',
+                text: 'Launch definition',
+            },
+            {
+                type: 'ul',
+                items: [
+                    'Staging URL behavior, QA checklist owners, and sign-off criteria.',
+                    'DNS cutover plan, SSL expectations, and rollback strategy.',
+                    'Training: who edits content post-launch and what guardrails exist.',
+                    'Post-launch warranty window versus ongoing maintenance scope.',
+                ],
+            },
+            {
+                type: 'p',
+                text: 'Attach rough timelines for delivering copy, imagery, and legal clearance—late content is the silent multiplier on calendar risk. A brief this concrete lets vendors propose phased milestones instead of vague phases that collapse near launch.',
             },
         ],
     },
