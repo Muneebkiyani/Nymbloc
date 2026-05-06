@@ -1,14 +1,16 @@
 /**
  * Post-build prerender: writes route-shaped HTML under dist/ so crawlers and reviewers
  * see real text without relying on client-side rendering alone.
- * Set SKIP_PRERENDER=1 to skip (e.g. CI without Chromium libs).
+ *
+ * - Local (Windows/Mac/Linux): full `puppeteer` + bundled Chrome.
+ * - Vercel (`VERCEL=1`): `puppeteer-core` + `@sparticuz/chromium` (standard Chrome libs are missing there).
+ * - Set SKIP_PRERENDER=1 to skip entirely.
  */
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
 import net from 'node:net';
-import puppeteer from 'puppeteer';
 import { blogPosts } from '../src/data/blogPosts.js';
 import { NICHE_DEMO_LIST } from '../src/data/nicheDemos.js';
 
@@ -73,6 +75,27 @@ async function waitForPreview(origin, timeoutMs = 180000) {
     throw new Error(`Preview server did not respond at ${origin}`);
 }
 
+async function launchBrowser() {
+    const onVercel = process.env.VERCEL === '1';
+
+    if (onVercel) {
+        const chromium = (await import('@sparticuz/chromium')).default;
+        const puppeteerCore = (await import('puppeteer-core')).default;
+        return puppeteerCore.launch({
+            args: chromium.args,
+            defaultViewport: { width: 1280, height: 900, deviceScaleFactor: 1 },
+            executablePath: await chromium.executablePath(),
+            headless: true,
+        });
+    }
+
+    const puppeteer = (await import('puppeteer')).default;
+    return puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+    });
+}
+
 async function waitForHydrated(page) {
     await page.waitForFunction(
         () => {
@@ -121,10 +144,7 @@ async function main() {
 
     await waitForPreview(origin);
 
-    const browser = await puppeteer.launch({
-        headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-    });
+    const browser = await launchBrowser();
 
     try {
         const page = await browser.newPage();
