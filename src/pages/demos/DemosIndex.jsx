@@ -48,6 +48,11 @@ const DemosIndex = () => {
                             </Link>
                         ))}
                     </div>
+                    <p className="niche-demo-index-attribution" style={{ marginTop: '2rem', maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto', fontSize: '0.9rem', lineHeight: 1.55, color: 'var(--text-light)' }}>
+                        Branding, layout, and copy on each demo are <strong>NYMBLOC originals</strong> for illustration only.
+                        Venue names and stories are fictional; photography is credited stock (see each demo)—not an endorsement
+                        by any real restaurant, salon, or brand.
+                    </p>
                     <p className="niche-demo-index-back text-center" style={{ marginTop: '2.5rem' }}>
                         <Link to="/" className="text-link">
                             ← Back to NYMBLOC home

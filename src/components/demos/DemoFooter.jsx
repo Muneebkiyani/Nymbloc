@@ -44,7 +44,10 @@ export default function DemoFooter() {
                     </div>
                 </div>
                 <div className="demo-footer__bar" data-aos="fade-up" data-aos-delay="80" data-aos-duration="500">
-                    <span>© {new Date().getFullYear()} {SITE_NAME}. Demo layouts are for illustration.</span>
+                    <span>
+                        © {new Date().getFullYear()} {SITE_NAME}. Sample venues are fictional; visuals use licensed stock where noted.
+                        Web services are offered only by {SITE_NAME}—not by any business depicted here.
+                    </span>
                     <a href="mailto:hello@nymbloc.com">hello@nymbloc.com</a>
                 </div>
             </div>

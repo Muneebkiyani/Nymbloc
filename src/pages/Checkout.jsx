@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Checkout = () => {
     const { search } = useLocation();
@@ -118,6 +118,26 @@ const Checkout = () => {
                                 <p className="summary-disclaimer">
                                     * Final pricing might vary based on specific requirements. We will provide a formal invoice after the discovery call.
                                 </p>
+                                <div className="checkout-seller-clarity" style={{ marginTop: '1.25rem', paddingTop: '1.25rem', borderTop: '1px solid rgba(148, 163, 184, 0.35)' }}>
+                                    <h3 className="checkout-form-title" style={{ fontSize: '1rem', marginBottom: '0.65rem' }}>
+                                        Service provider
+                                    </h3>
+                                    <p style={{ fontSize: '0.9rem', lineHeight: 1.55, color: 'var(--text-light)', marginBottom: '0.65rem' }}>
+                                        <strong>NYMBLOC</strong> (nymbloc.com) is the business offering this quote. We sell{' '}
+                                        <strong>custom digital services</strong>—websites, applications, and WordPress builds—not
+                                        physical retail goods and not third-party software licenses resold as our own.
+                                    </p>
+                                    <p style={{ fontSize: '0.88rem', lineHeight: 1.5, color: 'var(--text-light)', marginBottom: 0 }}>
+                                        Contact:{' '}
+                                        <a href="mailto:hello@nymbloc.com">hello@nymbloc.com</a>
+                                        {' · '}
+                                        <a href="tel:+17407626613">+1 740 762 6613</a>
+                                        {' · '}
+                                        <Link to="/terms">Terms</Link>
+                                        {' · '}
+                                        <Link to="/privacy">Privacy</Link>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
